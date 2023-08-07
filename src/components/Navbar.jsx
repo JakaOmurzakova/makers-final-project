@@ -14,7 +14,6 @@ import MenuItem from "@mui/material/MenuItem";
 import "../style.css";
 
 const pages = ["Restaurant", "Services", "Contact us"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,7 +37,8 @@ function Navbar() {
   return (
     <AppBar
       sx={{
-        background: "#53a8b6",
+        background: "#a0d5de",
+        borderRadius: "0 0 30px 30px",
       }}
     >
       <Container maxWidth="xl">
@@ -135,7 +135,12 @@ function Navbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "black",
+                  display: "block",
+                  fontWeight: "600",
+                }}
               >
                 {page}
               </Button>
