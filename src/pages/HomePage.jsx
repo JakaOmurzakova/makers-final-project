@@ -18,16 +18,6 @@ const HomePage = () => {
           alt=""
         />
       </div>
-      <div className="homepage_content2">
-        <img
-          src="https://i.pinimg.com/originals/6e/c7/df/6ec7dff5ee1d8d506751fa8884713280.gif"
-          alt=""
-        />
-        <div className="homepage_content2_item_text">
-          xrtcvubWNOEUHGFNIPuwegf
-        </div>
-        <div className="homepage_content2_item_text">WEGVUIwyegbfciuoW</div>
-      </div>
     </div>
   );
 };
