@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Quicksand", sans-serif;
+}
+/* ? Navbar */
 @media screen and (max-width: 894px) {
   .navbar_logo1 {
     display: none;
@@ -13,4 +21,98 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+/* ? Footer */
+.footer_container {
+  width: 100%;
+  height: 250px;
+  background-color: #a0d5de;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-radius: 40px 40px 0 0;
+}
+.footer_container_block1__navigation {
+  display: flex;
+}
+.footer_container_block2__social-networks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer_container_block2__social-networks_sub_container {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.footer_container_block1__navigation,
+.footer_container_block2__social-networks,
+.footer_container_block3__about-us {
+  margin-top: 10px;
+}
+.footer_container_block1__navigation_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+span {
+  font-size: 19px;
+}
+.footer_container_block3__about-us_item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer_container_block3__about-us_item h2 {
+  padding-left: 20px;
+}
+@media screen and (max-width: 1000px) {
+  span {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 850px) {
+  span {
+    font-size: 14px;
+  }
+  .footer_container_block2__social-networks_sub_container {
+    width: 220px;
+  }
+  .footer_container_block2__social-networks_sub_container img {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 582px) {
+  .footer_container {
+    height: 500px;
+  }
+  span {
+    font-size: 18px;
+  }
+  .footer_container_block2__social-networks_sub_container {
+    width: 200px;
+  }
+  .footer_container_block2__social-networks_sub_container img {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 377px) {
+  .footer_container {
+    height: 600px;
+  }
+  span {
+    font-size: 18px;
+  }
+  .footer_container_block2__social-networks_sub_container {
+    width: 200px;
+  }
+  .footer_container_block2__social-networks_sub_container img {
+    width: 30px;
+  }
 }
