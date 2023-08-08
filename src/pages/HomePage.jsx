@@ -1,6 +1,7 @@
 import React from "react";
 
 const HomePage = () => {
+
   return (
     <div className="homepage_container">
       <img className="figna" src="https://i.gifer.com/XlNl.gif" alt="" />
@@ -30,6 +31,11 @@ const HomePage = () => {
       </div>
     </div>
   );
+=======
+
+  return <div>HomePage</div>;
+
+
 };
 
 export default HomePage;

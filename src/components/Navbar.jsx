@@ -12,12 +12,21 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import "../style.css";
+import { Link, useNavigate } from "react-router-dom";
 
-const pages = ["Restaurant", "Services", "Contact us"];
+
+const pages = [
+  { title: "Restaurant", path: "/restaurant" },
+  { title: "Services", path: "/services" },
+  { title: "Contact us", path: "/contact" },
+];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -93,11 +102,26 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="right">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <Typography
+                  textAlign="right"
+                  component={Link}
+                  to={"/restaurant"}
+                  textDecoration="none"
+                >
+                  Restaurant
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="right" component={Link} to={"/services"}>
+                  Services
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="right" component={Link} to={"/contact"}>
+                  Contact us
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -133,16 +157,11 @@ function Navbar() {
           >
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontWeight: "600",
-                }}
+                key={page.title}
+                onClick={() => navigate(page.path)}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
