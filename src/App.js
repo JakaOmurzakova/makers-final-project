@@ -1,9 +1,9 @@
-import MainLayout from "./layouts/MainLayout";
+import MainRoute from "./routes/MainRoute";
 
 function App() {
   return (
     <div className="App">
-      <MainLayout />
+      <MainRoute />
     </div>
   );
 }

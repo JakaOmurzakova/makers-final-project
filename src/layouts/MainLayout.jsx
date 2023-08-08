@@ -5,10 +5,17 @@ import Footer from "../components/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
-      <Outlet />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Navbar />
       <Footer />
+      <Outlet />
     </div>
   );
 };
