@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import RestaurantPage from "../pages/RestaurantPage";
 import ServicesPage from "../pages/ServicesPage";
 import ContactPage from "../pages/ContactPage";
+import AuthPage from "../pages/AuthPage";
 
 const MainRoute = () => {
   return (
@@ -15,6 +16,7 @@ const MainRoute = () => {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Route>
+      <Route path="/auth" element={<AuthPage />} />
     </Routes>
   );
 };
