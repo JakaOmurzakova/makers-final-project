@@ -31,9 +31,7 @@ const HomePage = () => {
       </div>
     </div>
   );
-=======
 
-  return <div>HomePage</div>;
 
 
 };
