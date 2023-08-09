@@ -157,5 +157,10 @@ span {
   border: 10px solid rgba(0, 0, 0, 0.33);
   border-radius: 60px;
 }
-.homepage_content2 {
+/* .homepage_content2 {
+} */
+
+.selected {
+  background-color: #b6d7a8;
+  color: #fff;
 }
