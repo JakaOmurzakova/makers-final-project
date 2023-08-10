@@ -90,17 +90,97 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="homepage_content">
-        <img
-          className="homepage_content_item1"
-          src="https://www.jetsetter.com//uploads/sites/7/2018/04/cZ_XUOLK.jpeg"
-          alt=""
-        />
-        <img
-          className="homepage_content_item1"
-          src="https://i.travelapi.com/lodging/18000000/17690000/17680800/17680731/b52043f0_z.jpg"
-          alt=""
-        />
+      <div className="homepage_card_container">
+        <h2 className="homepage_text">THE BEST HOTEL FOR YOU</h2>
+        <div className="homepage_content_container">
+          <div className="homepage_card item1">
+            <img
+              src="https://i0.wp.com/blog.bambatravel.com/wp-content/uploads/2015/08/Ibiza-Spain-e1438694304394.jpg?fit=800%2C470&ssl=1"
+              alt=""
+            />
+          </div>
+          <span>
+            The best option for your vacation. More than 20 years this hotel
+            provides the best holiday expirience for many people
+          </span>
+        </div>
+        <div className="homepage_content_container">
+          <span className="homepage_content_container_span_2 span_for_undisplay">
+            Nestled in nature, our spa offers a calm escape from the
+            everyday.Discover therapies that harness the island's natural gifts
+            for total renewal.Experience plush robes, calming scents, and an
+            atmosphere of pure luxury.
+          </span>
+          <div className="homepage_card item1">
+            <img
+              src="https://hauteliving.com/wp-content/uploads/2014/10/LPI_Spa-shells_hr.jpg"
+              alt=""
+            />
+          </div>
+          <span className="span_for_display homepage_content_container_span_2">
+            Nestled in nature, our spa offers a calm escape from the
+            everyday.Discover therapies that harness the island's natural gifts
+            for total renewal.Experience plush robes, calming scents, and an
+            atmosphere of pure luxury.
+          </span>
+        </div>
+        <div className="homepage_content_container">
+          <div className="homepage_card item1">
+            <img
+              src="https://mb.cision.com/Public/15396/2220317/9abaad02c1cdbacf_800x800ar.jpg"
+              alt=""
+            />
+          </div>
+          <span>
+            {" "}
+            Discover Tranquility: Immerse yourself in the soothing sounds of
+            waves and gentle ocean breezes. Our strategically designed rooms
+            provide stunning panoramic views of the sparkling turquoise waters
+            and pristine sandy beaches.
+          </span>
+        </div>
+        <h2 className="homepage_text">More about life in Laoma Island</h2>
+        <div className="homepage_content_container2">
+          <div className="homepage_card item2">
+            <img
+              src="https://www.dotwnews.com/uploads/posts/72281.jpg"
+              alt=""
+            />
+          </div>
+          <div className="homepage_card item2">
+            <img
+              src="https://media.resources.festicket.com/www/magazine/Zrce_L.png"
+              alt=""
+            />
+          </div>
+          <div className="homepage_card item2">
+            <img
+              src="https://yachtwatersports.com/wp-content/uploads/2019/11/960x0.jpg"
+              alt=""
+            />
+          </div>
+          <div className="homepage_card item2">
+            <img
+              src="https://beachatlas.s3.us-east-2.amazonaws.com/7acc56b4-8793-464c-91d6-5fde3c50444e.jpeg"
+              alt=""
+            />
+          </div>
+          <div className="homepage_card item3">
+            <img
+              src="https://i0.wp.com/hicartagena.com/wp-content/uploads/2020/03/cholon-party-boat-e1602960244128.jpg?fit=1742%2C1118&ssl=1"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div className="homepage_iframe_container" style={{ marginTop: "100px" }}>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/WdMjWg3E_e4"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   );
