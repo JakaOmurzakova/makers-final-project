@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHotelContext } from "../contexts/HotelContext";
+import { useSearchParams } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <div className="homepage_container">
+
       <div className="homepage_map_container">
         <div className="map_container_description1">
           <div className="description1">
@@ -89,6 +92,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
 
       <div className="homepage_card_container">
         <h2 className="homepage_text">THE BEST HOTEL FOR YOU</h2>
@@ -181,6 +185,19 @@ const HomePage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
+
+
+      <div className="homepage_content">
+        <img
+          className="homepage_content_item1"
+          src="https://www.jetsetter.com//uploads/sites/7/2018/04/cZ_XUOLK.jpeg"
+          alt=""
+        />
+        <img
+          className="homepage_content_item1"
+          src="https://i.travelapi.com/lodging/18000000/17690000/17680800/17680731/b52043f0_z.jpg"
+          alt=""
+        />
       </div>
     </div>
   );
