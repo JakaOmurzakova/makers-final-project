@@ -126,14 +126,7 @@ span {
   border: 20px solid rgba(0, 0, 0, 0.32);
   border-radius: 30px;
 }
-.figna {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-}
+
 .homepage_container {
   height: 100%;
   width: 100%;
@@ -163,4 +156,312 @@ span {
 .selected {
   background-color: #b6d7a8;
   color: #fff;
+}
+
+/* ? Map */
+/* ? Map item restaraunt */
+.homepage_map_container {
+  position: relative;
+}
+.map_container_description1 {
+  position: absolute;
+  width: 130px;
+  height: 100px;
+  left: 150px;
+  top: 200px;
+}
+
+.description1 {
+  background-color: #000000a2;
+  width: 150px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+
+.map_container_description1:hover .description1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+
+.description1_image {
+  width: 100px;
+  height: 100px;
+
+  background-image: url(https://png.pngtree.com/element_our/20200609/ourlarge/pngtree-restaurant-shop-image_2224376.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ? Map item 2 Residance*/
+.map_container_description2 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 260px;
+  top: 450px;
+}
+
+.description2 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+
+.map_container_description2:hover .description2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+
+/* ? Map item 3 Yacht*/
+.map_container_description3 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 490px;
+  top: 160px;
+}
+
+.description3 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+
+.map_container_description3:hover .description3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+
+/* ? Second yacht */
+.map_container_description4 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 930px;
+  /* background-color: #47acbb; */
+  top: 180px;
+}
+
+.description4 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+
+.map_container_description4:hover .description4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 10s;
+}
+/* ? Map item Swimming Pool */
+.map_container_description5 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 550px;
+  top: 460px;
+}
+
+.description5 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+
+.map_container_description5:hover .description5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+/* ? Map item Tennis Court */
+.map_container_description6 {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  left: 1000px;
+  top: 520px;
+  /* background-color: #b6d7a8; */
+}
+
+.description6 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+
+.map_container_description6:hover .description6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+/* ? Map item GYM */
+.map_container_description7 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 820px;
+  top: 510px;
+}
+
+.description7 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+.map_container_description7:hover .description7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+/* ? Map item Aquapark */
+.map_container_description8 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 120px;
+  top: 450px;
+}
+
+.description8 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+.map_container_description8:hover .description8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+/* ? Map item Baby concept */
+.map_container_description9 {
+  position: absolute;
+  width: 170px;
+  height: 100px;
+  left: 545px;
+  top: 360px;
+}
+
+.description9 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+.map_container_description9:hover .description9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+/* ? Map item SPA */
+.map_container_description10 {
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  right: 160px;
+  top: 460px;
+}
+
+.description10 {
+  background-color: #000000a2;
+  width: 190px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+.map_container_description10:hover .description10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* ? Map item Golf */
+.map_container_description11 {
+  position: absolute;
+  width: 90px;
+  /* background-color: #a0d5de; */
+  height: 40px;
+  right: 320px;
+  top: 475px;
+}
+
+.description11 {
+  background-color: #000000a2;
+  position: absolute;
+  width: 190px;
+  height: 170px;
+  bottom: 1px;
+  right: 10px;
+  display: none;
+  border-radius: 10px;
+}
+.map_container_description11:hover .description11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
+}
+/* ? Map item Cottages */
+.map_container_description12 {
+  position: absolute;
+  width: 255px;
+  /* background-color: #a0d5de; */
+  height: 200px;
+  left: 290px;
+  top: 235px;
+}
+
+.description12 {
+  background-color: #000000a2;
+  position: absolute;
+  width: 190px;
+  right: 33px;
+  height: 170px;
+  display: none;
+  border-radius: 10px;
+}
+.map_container_description12:hover .description12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.6s;
 }
