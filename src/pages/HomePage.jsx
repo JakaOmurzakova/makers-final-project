@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHotelContext } from "../contexts/HotelContext";
+import { useSearchParams } from "react-router-dom";
 
 const HomePage = () => {
   return (
     <div className="homepage_container">
+
+      {/*<img className="figna" src="https://i.gifer.com/XlNl.gif" alt="" />*/}
+
       <div className="homepage_map_container">
         <div className="map_container_description1">
           <div className="description1">
@@ -89,6 +94,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
 
       <div className="homepage_content">
         <img

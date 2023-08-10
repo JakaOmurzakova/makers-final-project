@@ -17,7 +17,7 @@ import { Navigate } from "react-router-dom";
 import { IconButton, InputAdornment } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { useAuthContext } from "../contexts.jsx/AuthContext";
+import { useAuthContext } from "../contexts/AuthContext";
 
 //function Copyright(props) {
 //  return (
