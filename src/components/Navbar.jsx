@@ -15,9 +15,10 @@ import "../style.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const pages = [
+  { title: "Home", path: "/" },
   { title: "Restaurant", path: "/restaurant" },
   { title: "Services", path: "/services" },
-  { title: "Contact us", path: "/contact" },
+  { title: "Cottages", path: "/cottages" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -111,6 +112,14 @@ function Navbar() {
                   to={"/restaurant"}
                   textDecoration="none"
                 >
+                  Home
+                </Typography>
+                <Typography
+                  textAlign="right"
+                  component={Link}
+                  to={"/restaurant"}
+                  textDecoration="none"
+                >
                   Restaurant
                 </Typography>
               </MenuItem>
@@ -121,7 +130,7 @@ function Navbar() {
               </MenuItem>
               <MenuItem>
                 <Typography textAlign="right" component={Link} to={"/contact"}>
-                  Contact us
+                  Cottages
                 </Typography>
               </MenuItem>
             </Menu>

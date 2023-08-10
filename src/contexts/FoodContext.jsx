@@ -117,6 +117,7 @@ const FoodContext = ({ children }) => {
     getCategories,
     page,
     setPage,
+
   };
   return <foodContext.Provider value={value}>{children}</foodContext.Provider>;
 };
