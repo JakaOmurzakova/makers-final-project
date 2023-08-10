@@ -14,14 +14,12 @@ import MenuItem from "@mui/material/MenuItem";
 import "../style.css";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const pages = [
   { title: "Restaurant", path: "/restaurant" },
   { title: "Services", path: "/services" },
   { title: "Contact us", path: "/contact" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -53,7 +51,11 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+          <Box
+            component={Link}
+            to="/"
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+          >
             <img
               width={50}
               src="https://www.svgrepo.com/show/517445/letter-uppercase-square-r.svg"
@@ -128,8 +130,8 @@ function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

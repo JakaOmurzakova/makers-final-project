@@ -7,6 +7,10 @@ import ServicesPage from "../pages/ServicesPage";
 import ContactPage from "../pages/ContactPage";
 import AuthPage from "../pages/AuthPage";
 import NotFoundPage from "../pages/NotFoundPage";
+import ActivationPage from "../pages/ActivationPage";
+import AddRoomPage from "../pages/hotelRooms/AddRoomPage";
+import EditRoomPage from "../pages/hotelRooms/EditRoomPage";
+import RoomPage from "../pages/hotelRooms/RoomPage";
 
 const MainRoute = () => {
   return (
@@ -16,9 +20,13 @@ const MainRoute = () => {
         <Route path="/restaurant" element={<RestaurantPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/add-room" element={<AddRoomPage />} />
+        <Route path="/edit-room/:id" element={<EditRoomPage />} />
+        <Route path="/rooms" element={<RoomPage />} />
       </Route>
       <Route path="/auth" element={<AuthPage />} />
       <Route path="*" element={<NotFoundPage />} />
+      <Route path="/api/account/activate/" element={<ActivationPage />} />
     </Routes>
   );
 };

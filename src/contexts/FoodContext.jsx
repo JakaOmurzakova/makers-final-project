@@ -115,6 +115,8 @@ const FoodContext = ({ children }) => {
     deleteDish,
     editDish,
     getCategories,
+    page,
+    setPage,
   };
   return <foodContext.Provider value={value}>{children}</foodContext.Provider>;
 };

@@ -14,7 +14,7 @@ const AuthContext = ({ children }) => {
 
   async function register(credentials) {
     try {
-      await axios.post(`${BASE_URL}/account/register/`, credentials);
+      await axios.post(`${BASE_URL}/account/registration/`, credentials);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +27,7 @@ const AuthContext = ({ children }) => {
         credentials
       );
       localStorage.setItem("tokens", JSON.stringify(tokens));
-      const { data } = await $axios.get(`${BASE_URL}/account/profile/`);
+      const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
       setUser(data);
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ const AuthContext = ({ children }) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
       if (tokens) {
-        const { data } = await $axios.get(`${BASE_URL}/account/profile/`);
+        const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
         setUser(data);
       } else {
         setUser(null);
