@@ -11,20 +11,15 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import HotelContext from "./contexts/HotelContext";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <AuthContext>
-
       <ServicesContext>
-        <App />
+        <HotelContext>
+          <App />
+        </HotelContext>
       </ServicesContext>
-
-      <HotelContext>
-        <App />
-      </HotelContext>
-
     </AuthContext>
   </BrowserRouter>
 );
