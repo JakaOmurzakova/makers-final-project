@@ -52,7 +52,11 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+          <Box
+            component={Link}
+            to="/"
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+          >
             <img
               width={50}
               src="https://www.svgrepo.com/show/517445/letter-uppercase-square-r.svg"
@@ -135,8 +139,8 @@ function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
