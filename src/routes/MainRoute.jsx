@@ -24,11 +24,9 @@ const MainRoute = () => {
         <Route path="cottages" element={<CottagePage />} />
         <Route path="/order" element={<OrderPage />} />
 
-        <Route path="/contact" element={<ContactPage />} />
         <Route path="/add-room" element={<AddRoomPage />} />
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
         <Route path="/rooms" element={<RoomPage />} />
-
       </Route>
       <Route path="/auth" element={<AuthPage />} />
       <Route path="*" element={<NotFoundPage />} />
