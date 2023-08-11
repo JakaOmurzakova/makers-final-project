@@ -4,7 +4,7 @@ import img3 from "../components/images/havchik.png";
 // import img4 from "../components/images/wine.jpeg";
 import img5 from "../components/images/chef.jpeg";
 import img6 from "../components/images/scale_1200.webp";
-import "../components/restaurant.css";
+import "../components/Restaurant.css";
 import { useNavigate } from "react-router-dom";
 
 const RestaurantPage = () => {
