@@ -4,9 +4,12 @@ import img3 from "../components/images/havchik.png";
 // import img4 from "../components/images/wine.jpeg";
 import img5 from "../components/images/chef.jpeg";
 import img6 from "../components/images/scale_1200.webp";
-import "../components/Restaurant.css";
+import "../components/restaurant.css";
+import { useNavigate } from "react-router-dom";
 
 const RestaurantPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="restaurant-page">
       <header className="header"></header>
@@ -47,7 +50,9 @@ const RestaurantPage = () => {
             itaque totam doloremque culpa asperiores ducimus praesentium maxime
             eos, enim perferendis?
           </p>
-          <button className="btn-menu">VIEW MENU</button>
+          <button onClick={() => navigate("/menu")} className="btn-menu">
+            VIEW MENU
+          </button>
         </div>
       </div>
 
