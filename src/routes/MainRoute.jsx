@@ -12,6 +12,7 @@ import ActivationPage from "../pages/ActivationPage";
 import AddRoomPage from "../pages/hotelRooms/AddRoomPage";
 import EditRoomPage from "../pages/hotelRooms/EditRoomPage";
 import RoomPage from "../pages/hotelRooms/RoomPage";
+import MenuPage from "../pages/MenuPage";
 
 const MainRoute = () => {
   return (
@@ -23,6 +24,7 @@ const MainRoute = () => {
 
         <Route path="cottages" element={<CottagePage />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/menu" element={<MenuPage />} />
 
         <Route path="/add-room" element={<AddRoomPage />} />
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
