@@ -14,14 +14,12 @@ import MenuItem from "@mui/material/MenuItem";
 import "../style.css";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const pages = [
   { title: "Restaurant", path: "/restaurant" },
   { title: "Services", path: "/services" },
   { title: "Contact us", path: "/contact" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
