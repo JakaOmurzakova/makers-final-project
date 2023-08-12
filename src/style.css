@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: "Quicksand", sans-serif;
   background-color: #192734 !important;
 }
@@ -523,7 +523,7 @@ span {
     purple,
     pink
   );
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 

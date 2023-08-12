@@ -79,7 +79,7 @@ export default function AddRoomPage() {
               label="Title"
               name="title"
               autoFocus
-              value={formValue.title}
+              value={formValue.name}
               onChange={handleChange}
             />
             <TextField
