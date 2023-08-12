@@ -4,19 +4,25 @@ import { useSearchParams } from "react-router-dom";
 import RoomItem from "../../components/hotelrooms/RoomItem";
 import { Grid } from "@mui/material";
 
-const RoomPage = () => {
+const CottagePage = () => {
   const { getRooms, rooms } = useHotelContext();
   const [searchParams] = useSearchParams();
   useEffect(() => {
     getRooms();
   }, [searchParams]);
   return (
-    <Grid container spacing={2} justifyContent="center">
+    <Grid
+      sx={{ marginTop: "100px", marginBottom: "60px" }}
+      container
+      spacing={2}
+      justifyContent="center"
+      md={8}
+      gap="15px"
+    >
       {rooms.map((item) => (
-        <RoomItem key={item.id} item={item} />
+        <RoomItem item={item} key={item.id} />
       ))}
     </Grid>
   );
 };
-
-export default RoomPage;
+export default CottagePage;

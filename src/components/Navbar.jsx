@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import "../style.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const pages = [
   { title: "Home", path: "/" },
@@ -26,6 +27,7 @@ function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
+  const { user, logout } = useAuthContext();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -220,7 +222,22 @@ function Navbar() {
                 <div></div>
                 <div>gfhvjbhkjnkl</div>
                 <div>fgvhbjnkml</div>
-                <button className="navbar_profile_sign_out">Sign Out</button>
+                {!user ? (
+                  <Button
+                    component={Link}
+                    to="/auth"
+                    className="navbar_profile_sign_out"
+                  >
+                    Sign In
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => logout()}
+                    className="navbar_profile_sign_out"
+                  >
+                    Sign Out
+                  </Button>
+                )}
               </div>
             </Menu>
           </Box>

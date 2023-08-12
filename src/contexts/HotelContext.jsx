@@ -31,6 +31,7 @@ const HotelContext = ({ children }) => {
   const [state, dispach] = useReducer(reducer, initState);
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = useState(+searchParams.get("page") || 1);
+  const [detail, setDetail] = useState(null);
 
   async function getRooms() {
     try {
@@ -88,9 +89,19 @@ const HotelContext = ({ children }) => {
   async function getCategories() {
     try {
       const { data } = await $axios.get(`${BASE_URL}/room-types/`);
+
+      dispach({
+        type: HOTEL_ACTION.categories,
+        payload: data,
+      });
     } catch (e) {
       console.log(e);
     }
+  }
+
+  async function getDetail(id) {
+    const { data } = await $axios.get(`${BASE_URL}/hotels/${id}/`);
+    setDetail(data);
   }
 
   const value = {
@@ -105,7 +116,11 @@ const HotelContext = ({ children }) => {
     editRoom,
     page,
     setPage,
+    getCategories,
+    getDetail,
+    detail,
   };
+
   return (
     <hotelContext.Provider value={value}>{children}</hotelContext.Provider>
   );

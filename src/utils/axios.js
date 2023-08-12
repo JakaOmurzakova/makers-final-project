@@ -1,6 +1,5 @@
 import axios from "axios";
 import { BASE_URL } from "./consts";
-import { json } from "react-router-dom";
 
 const $axios = axios.create();
 
@@ -45,7 +44,7 @@ async function refreshAccessToken() {
         "tokens",
         JSON.stringify({
           access: data.access,
-          refresh: data.refresh,
+          refresh: tokens.refresh,
         })
       );
       return data.access;
