@@ -47,7 +47,7 @@ function Navbar() {
   return (
     <AppBar
       sx={{
-        background: "#a0d5de",
+        background: "#15202b",
         borderRadius: "0 0 30px 30px",
       }}
     >
