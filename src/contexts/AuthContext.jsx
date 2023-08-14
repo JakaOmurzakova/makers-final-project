@@ -28,7 +28,7 @@ const AuthContext = ({ children }) => {
       );
       localStorage.setItem("tokens", JSON.stringify(tokens));
 
-      const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
+      const { data } = await $axios.get(`${BASE_URL}/account/users/profile/`);
 
       setUser(data);
     } catch (error) {
@@ -45,7 +45,7 @@ const AuthContext = ({ children }) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
       if (tokens) {
-        const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
+        const { data } = await $axios.get(`${BASE_URL}/account/users/profile/`);
 
         setUser(data);
       } else {
@@ -58,7 +58,7 @@ const AuthContext = ({ children }) => {
 
   async function activateUser(code) {
     try {
-      await $axios.post(`${BASE_URL}/account/activate/`, { code });
+      await $axios.post(`${BASE_URL}/account/email-verify/`, { code });
       navigate("/");
     } catch (error) {
       console.log(error);

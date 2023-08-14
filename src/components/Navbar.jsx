@@ -109,29 +109,41 @@ function Navbar() {
             >
               <MenuItem>
                 <Typography
-                  textAlign="right"
+                  textAlign="center"
                   component={Link}
-                  to={"/restaurant"}
-                  textDecoration="none"
+                  to={"/"}
+                  sx={{ textDecoration: "none", color: "black" }}
                 >
                   Home
                 </Typography>
+              </MenuItem>
+              <MenuItem>
                 <Typography
                   textAlign="right"
                   component={Link}
-                  to={"/restaurant"}
-                  textDecoration="none"
+                  to="/restaurant"
+                  sx={{ textDecoration: "none", color: "black" }}
                 >
                   Restaurant
                 </Typography>
               </MenuItem>
               <MenuItem>
-                <Typography textAlign="right" component={Link} to={"/services"}>
+                <Typography
+                  sx={{ textDecoration: "none", color: "black" }}
+                  textAlign="right"
+                  component={Link}
+                  to={"/services"}
+                >
                   Services
                 </Typography>
               </MenuItem>
               <MenuItem>
-                <Typography textAlign="right" component={Link} to={"/contact"}>
+                <Typography
+                  sx={{ textDecoration: "none", color: "black" }}
+                  textAlign="right"
+                  component={Link}
+                  to={"/cottages"}
+                >
                   Cottages
                 </Typography>
               </MenuItem>
@@ -170,8 +182,9 @@ function Navbar() {
           >
             {pages.map((page) => (
               <Button
+                component={Link}
                 key={page.title}
-                onClick={() => navigate(page.path)}
+                to={page.path}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page.title}
@@ -222,20 +235,20 @@ function Navbar() {
                 <div></div>
                 <div>gfhvjbhkjnkl</div>
                 <div>fgvhbjnkml</div>
-                {!user ? (
-                  <Button
-                    component={Link}
-                    to="/auth"
-                    className="navbar_profile_sign_out"
-                  >
-                    Sign In
-                  </Button>
-                ) : (
+                {user ? (
                   <Button
                     onClick={() => logout()}
                     className="navbar_profile_sign_out"
                   >
                     Sign Out
+                  </Button>
+                ) : (
+                  <Button
+                    component={Link}
+                    to="/auth"
+                    className="navbar_profile_sign_out"
+                  >
+                    Sing In
                   </Button>
                 )}
               </div>

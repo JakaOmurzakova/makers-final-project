@@ -61,7 +61,7 @@ export default function AuthPage() {
   };
 
   if (user) {
-    return <Navigate to="/" />;
+    return <Navigate to="/add-room" />;
   }
   return (
     <ThemeProvider theme={defaultTheme}>
