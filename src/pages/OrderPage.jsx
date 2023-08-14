@@ -1,11 +1,13 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Table } from "react-bootstrap";
 import moment from "moment";
+import { useOrderContext } from "../contexts/OrderContext";
 
 const OrderPage = () => {
   moment.updateLocale("en", { week: { dow: 1 } });
   const startOfWeek = moment().startOf("week");
-  // const endOfWeek = moment().endOf("week");
+  const [selectedIteration, setSelectedIteration] = useState(null);
+  // const { orderCard } = useOrderContext();
 
   const daysOfWeek = [
     "Monday",
@@ -29,14 +31,31 @@ const OrderPage = () => {
     "17:00",
   ];
 
-  const generateCellContent = () => {
-    // Generate the content for each cell here
-    return "Table cell";
+  function order(e) {
+    e.style.backgroundColor = "green";
+  }
+  const handleCellClick = (iteration) => {
+    setSelectedIteration(iteration);
+  };
+
+  // const generateCellContent = (iteration) => {
+
+  //   return iteration !== null ? iteration + 1 : "-";
+
+  //   // orderCard();
+  // };
+
+  const getSelectedIterationValue = () => {
+    if (selectedIteration !== null) {
+      // Do something with the selected iteration value
+      return selectedIteration + 1; // Adding 1 to match the numbering
+    }
+    return null;
   };
 
   return (
     <div>
-      <Table style={{ marginTop: "100px" }}>
+      <Table bordered style={{ marginTop: "100px" }}>
         <thead>
           <tr>
             <th style={{ backgroundColor: "#f8c43a" }}>Days of Week</th>
@@ -56,7 +75,7 @@ const OrderPage = () => {
           </tr>
         </thead>
         <tbody style={{ margin: "15px" }}>
-          {timeSlots.map((time) => (
+          {timeSlots.map((time, timeIndex) => (
             <tr key={time}>
               <td
                 style={{
@@ -67,8 +86,35 @@ const OrderPage = () => {
               >
                 {time}
               </td>
-              {daysOfWeek.map((_, index) => (
-                <td key={index}>{generateCellContent()}</td>
+              {daysOfWeek.map((_, dayIndex) => (
+                <td
+                  key={dayIndex}
+                  style={{
+                    border: "1px solid #000",
+                    padding: "5px",
+                    cursor: "pointer",
+                    backgroundColor:
+                      selectedIteration === null
+                        ? "transparent"
+                        : selectedIteration ===
+                          timeIndex * daysOfWeek.length + dayIndex
+                        ? "#f8c43a"
+                        : "transparent",
+                  }}
+                  onClick={(e) =>
+                    // handleCellClick(timeIndex * daysOfWeek.length + dayIndex);
+                    // console.log(
+                    //   timeIndex * daysOfWeek.length + dayIndex,
+                    //   timeIndex,
+                    //   dayIndex
+                    // )
+                    order(e.currentTarget)
+                  }
+                >
+                  {/* {generateCellContent(
+                    timeIndex * daysOfWeek.length + dayIndex
+                  )} */}
+                </td>
               ))}
             </tr>
           ))}

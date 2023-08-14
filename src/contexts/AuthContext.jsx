@@ -14,7 +14,7 @@ const AuthContext = ({ children }) => {
 
   async function register(credentials) {
     try {
-      await axios.post(`${BASE_URL}/account/registration/`, credentials);
+      await axios.post(`${BASE_URL}/account/register/`, credentials);
     } catch (error) {
       console.log(error);
     }

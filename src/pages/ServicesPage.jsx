@@ -1,12 +1,13 @@
 import { Button, ImageList, ImageListItem } from "@mui/material";
-import React, { useEffect, useNavigate } from "react";
+import React, { useEffect, useNavigate, useState } from "react";
 import { useServiceContext } from "../contexts/ServicesContext";
 import { useParams } from "react-router";
 import { Box, Container } from "@mui/system";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ServicesPage = () => {
-  const { category, setCategory, services } = useServiceContext();
+  const { getServices, services, category, setCategory } = useServiceContext();
 
   return (
     <div
@@ -86,7 +87,7 @@ const ServicesPage = () => {
         }}
       >
         {services.map((item) => (
-          <Box sx={{ margin: "50px", display: "flex" }}>
+          <Box key={item.id} sx={{ margin: "50px", display: "flex" }}>
             <ImageList variant="standard" cols={3} gap={8}>
               <ImageListItem>
                 <img
@@ -109,7 +110,7 @@ const ServicesPage = () => {
               }}
               variant="standard"
             >
-              <h3>{item.title}</h3>
+              <h3 onClick={getServices}>{item.title}</h3>
               <p>{item.description}</p>
               <Link to={"/order"}>Order</Link>
             </Box>
@@ -121,47 +122,3 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
-
-{
-  /* <Container
-      style={{
-        marginTop: "30px",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        flexWrap: "wrap",
-        gap: "30px",
-      }}
-    >
-      {itemData.map((item) => (
-        <Box sx={{ margin: "50px", display: "flex" }}>
-          <ImageList variant="standard" cols={3} gap={8}>
-            <ImageListItem>
-              <img
-                src={item.img}
-                style={{ width: "450px", maxWidth: "none" }}
-              />
-            </ImageListItem>
-          </ImageList>
-          <Box
-            sx={{
-              width: "100%",
-              height: 450,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 auto",
-              padding: "10px",
-              textAlign: "center",
-            }}
-            variant="standard"
-          >
-            <h3>{item.title}</h3>
-            <p>description</p>
-            <h3>calendar</h3>
-          </Box>
-        </Box>
-      ))}
-    </Container> */
-}

@@ -54,6 +54,7 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+
           <Box
             component={Link}
             to="/"
@@ -198,6 +199,7 @@ function Navbar() {
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
@@ -214,6 +216,7 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+
               <div className="navbar_logo__menu_container">
                 <img
                   className="navbar_logo__menu_photo"
@@ -251,6 +254,47 @@ function Navbar() {
                     Sing In
                   </Button>
                 )}
+
+              <div className="profile_container">
+                <div className="navbar_logo__menu_container">
+                  <img
+                    className="navbar_logo__menu_photo"
+                    src="https://i.redd.it/w0lmb8i7odo51.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "25px",
+                    width: "300px",
+                    paddngBottom: "50px",
+                  }}
+                >
+                  <div></div>
+                  <div>gfhvjbhkjnkl</div>
+                  <div>fgvhbjnkml</div>
+                  {!user ? (
+                    <Button
+                      component={Link}
+                      to="/auth"
+                      className="navbar_profile_sign_out"
+                    >
+                      Sign In
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => logout()}
+                      className="navbar_profile_sign_out"
+                    >
+                      Sign Out
+                    </Button>
+                  )}
+                </div>
+
               </div>
             </Menu>
           </Box>
