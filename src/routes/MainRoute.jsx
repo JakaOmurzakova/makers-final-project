@@ -11,12 +11,9 @@ import ActivationPage from "../pages/ActivationPage";
 import AddRoomPage from "../pages/hotelRooms/AddRoomPage";
 import EditRoomPage from "../pages/hotelRooms/EditRoomPage";
 
+import MenuPage from "../pages/MenuPage";
 import CottagePage from "../pages/hotelRooms/CottagePage";
 import HotelDetailPage from "../pages/hotelRooms/HotelDetailPage";
-
-
-import MenuPage from "../pages/MenuPage";
-
 
 const MainRoute = () => {
   return (

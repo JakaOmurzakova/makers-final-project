@@ -2,6 +2,15 @@ import React from "react";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import tiktok from "../assets/tiktok.svg";
+import instagram from "../assets/instagram_icon.svg";
+import twitter from "../assets/twitter_icon.svg";
+import youtube from "../assets/youtube_icon.svg";
+import facebook from "../assets/facebook_logo_icon.svg";
+import linkedIn from "../assets/linkedin_logo_icon.svg";
+import threads from "../assets/threads_logo_brand_sign_icon.svg";
+import telegram from "../assets/telegram_icon.svg";
+
 const Footer = () => {
   return (
     <div className="footer_container">
@@ -27,34 +36,18 @@ const Footer = () => {
       <div className="footer_container_block2__social-networks">
         <h2> Social Networks</h2>
         <div className="footer_container_block2__social-networks_sub_container">
-          <img
-            src="https://img.icons8.com/?size=1x&id=32292&format=png"
-            alt=""
-          />
+          <img width={50} src={tiktok} alt="" />
 
-          <img
-            src="https://img.icons8.com/?size=1x&id=9R1sV3QvY18K&format=png"
-            alt=""
-          />
+          <img width={50} src={youtube} alt="" />
 
-          <img
-            src="https://img.icons8.com/?size=1x&id=16712&format=png"
-            alt=""
-          />
+          <img width={50} src={facebook} alt="" />
 
-          <img
-            src="https://img.icons8.com/?size=1x&id=37325&format=png"
-            alt=""
-          />
+          <img width={50} src={instagram} alt="" />
 
-          <img
-            src="https://img.icons8.com/?size=1x&id=84521&format=png"
-            alt=""
-          />
-
-          <img src="https://img.icons8.com/?size=1x&id=447&format=png" alt="" />
-          <img src="https://img.icons8.com/?size=1x&id=435&format=png" alt="" />
-          <img src="https://img.icons8.com/?size=1x&id=437&format=png" alt="" />
+          <img width={50} src={twitter} alt="" />
+          <img width={50} src={linkedIn} alt="" />
+          <img width={50} src={threads} alt="" />
+          <img width={50} src={telegram} alt="" />
         </div>
       </div>
       <div className="footer_container_block3__about-us">

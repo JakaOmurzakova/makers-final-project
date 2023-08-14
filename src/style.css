@@ -168,6 +168,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .map_container_description1:hover .description1 {
@@ -447,6 +448,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 .map_container_description12:hover .description12 {
   display: flex;
