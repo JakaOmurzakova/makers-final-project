@@ -1,7 +1,5 @@
-
 export const API = "http://localhost:8000/services";
-export const BASE_URL = "http://34.219.38.147/api";
-
+export const BASE_URL = "http://16.170.205.114/docs";
 
 export const LIMIT = 4;
 
