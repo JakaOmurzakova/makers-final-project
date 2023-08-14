@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
+.restaurant-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  max-width: 100%;
+  padding-top: 15px;
+  background-color: #192734;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background-image: url("../components/images/albert-YYZU0Lo1uXE-unsplash.jpg");
+}
+
+.photo1 {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.centered-content {
+  max-width: 800px;
+  padding: 60px;
+  background-color: rgba(16, 64, 80, 0.7);
+  border-radius: 1;
+}
+
+.food-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 80px;
+}
+
+.photo2 {
+  max-width: 60%;
+  height: auto;
+}
+
+.food-drink {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.food-drink h1 {
+  font-family: "Gochi Hand", cursive;
+  font-size: 50px;
+}
+
+.food-info {
+  flex: 1;
+  margin-top: 150px;
+  padding-right: 20px;
+  padding-left: 15px;
+  color: rgb(222, 228, 232);
+  margin-right: 20px;
+  max-width: 40%;
+  top: 20px;
+}
+
+.food-images {
+  margin-top: 60px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+}
+
+.photo3 {
+  max-width: 70%;
+  height: auto;
+  z-index: 1;
+}
+.food-images2 {
+  display: none;
+}
+
+.photo4 {
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  z-index: 2;
+}
+
+.btn-reserv {
+  --color: #245bad;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 13px;
+  border: 1px solid;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.btn-reserv::before,
+.btn-reserv::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: rgb(18, 123, 155);
+  transition: 1s ease;
+}
+
+.btn-reserv::before {
+  top: -2em;
+  left: -1em;
+}
+
+.btn-reserv::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 2em);
+}
+
+.btn-reserv:hover::before,
+.btn-reserv:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.btn-reserv:hover {
+  color: rgb(249, 249, 249);
+  border: none;
+}
+
+.btn-reserv:active {
+  filter: brightness(0.8);
+}
+
+.chef-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px 0;
+  margin-top: 90px;
+}
+.chef-content h1 {
+  font-family: "Gochi Hand", cursive;
+  font-size: 50px;
+}
+
+.about-chef {
+  flex: 1;
+  padding-left: 20px;
+  color: rgb(222, 228, 232);
+}
+
+.chef {
+  max-width: 35%;
+  height: auto;
+  border: 6px solid #0a4ca3;
+  border-radius: 50%;
+}
+.about-restaurant {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 120px;
+}
+
+.about-restaurant h1 {
+  font-family: "Gochi Hand", cursive;
+  font-size: 50px;
+}
+
+.restaurant {
+  max-width: 60%;
+  margin-right: 20px;
+  border: 6px solid rgb(222, 228, 232);
+}
+
+.about-rest {
+  flex: 1;
+  color: rgb(222, 228, 232);
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.btn-menu {
+  --color: #245bad;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 13px;
+  border: 1px solid;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.btn-menu::before,
+.btn-menu::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: rgb(18, 123, 155);
+  transition: 1s ease;
+}
+
+.btn-menu::before {
+  top: -2em;
+  left: -1em;
+}
+
+.btn-menu::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 2em);
+}
+
+.btn-menu:hover::before,
+.btn-menu:hover::after {
+  height: 410px;
+  width: 410px;
+}
+.btn-menu:hover {
+  color: rgb(249, 249, 249);
+  border: none;
+}
+
+.btn-menu:active {
+  filter: brightness(0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .about-restaurant h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  .about-restaurant {
+    text-align: end;
+  }
+  .food-info {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .about-restaurant {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+  .about-restaurant img {
+    margin: 0;
+  }
+  .food-drink {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 100px;
+  }
+  .food-images {
+    display: none;
+  }
+  .food-images2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .food-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    align-items: center;
+  }
+  .food-info p {
+    width: 300px;
+    text-align: center  ;
+  }
+  .food-info h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    width: 300px;
+    text-align: center;
+  }
+}

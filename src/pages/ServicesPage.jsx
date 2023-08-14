@@ -12,20 +12,38 @@ const ServicesPage = () => {
   return (
     <div
       style={{
-        marginTop: "100px",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
       }}
+      className="servicepage_container"
     >
+      <div className="services_hero">
+        <div className="services_hero_text-container">
+          <h2>Relax, Enjoy, Be Calm</h2>
+          <p>
+            Nestled on the tranquil shores, our spa offers a haven of calmness
+            and serenity. From revitalizing massages to invigorating facials,
+            our skilled therapists curate a personalized journey just for
+            you.Immerse yourself in therapies harnessing the healing power of
+            the sea, leaving you refreshed and revitalized.
+          </p>
+        </div>
+      </div>
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           gap: "50px",
+          marginTop: "30px",
         }}
+        className="servicepage_btn_container"
       >
         <Button
+          sx={{
+            fontSize: "20px",
+          }}
           variant="#5585b5"
           disableElevation
           id="sport"
@@ -33,7 +51,11 @@ const ServicesPage = () => {
         >
           Sport
         </Button>
+        <div
+          style={{ width: "4px", height: "40px", backgroundColor: "white" }}
+        ></div>
         <Button
+          sx={{ fontSize: "20px" }}
           variant="#5585b5"
           disableElevation
           id="spa"
@@ -41,7 +63,11 @@ const ServicesPage = () => {
         >
           Spa & Massage
         </Button>
+        <div
+          style={{ width: "4px", height: "40px", backgroundColor: "white" }}
+        ></div>
         <Button
+          sx={{ fontSize: "20px" }}
           variant="#5585b5"
           disableElevation
           id="events"
