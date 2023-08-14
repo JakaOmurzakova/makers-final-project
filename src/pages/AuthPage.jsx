@@ -19,23 +19,6 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useAuthContext } from "../contexts/AuthContext";
 
-//function Copyright(props) {
-//  return (
-//    <Typography
-//      variant="body2"
-//      color="text.secondary"
-//      align="center"
-//      {...props}
-//    >
-//      {"Copyright © "}
-//      <Link color="inherit" href="https://mui.com/">
-//        Your Website
-//      </Link>
-//      {new Date().getFullYear()}
-//    </Typography>
-//  );
-//}
-
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
@@ -65,7 +48,7 @@ export default function AuthPage() {
   }
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" sx={{ color: "white" }}>
         <CssBaseline />
         <Box
           sx={{
@@ -93,6 +76,7 @@ export default function AuthPage() {
                 alignItems="center"
                 justifyContent="space-between"
                 gap={5}
+                sx={{ color: "white" }}
               >
                 <TextField
                   margin="normal"
@@ -113,6 +97,7 @@ export default function AuthPage() {
             )}
 
             <TextField
+              className="wewe"
               margin="normal"
               required
               fullWidth
