@@ -1,13 +1,44 @@
 import React, { createContext, useContext, useState } from "react";
+import { useReducer } from "react";
 import { useParams } from "react-router";
+import { BASE_URL } from "../utils/consts";
+import axios from "axios";
 
 const serviceContext = createContext();
 export function useServiceContext() {
   return useContext(serviceContext);
 }
 
+const initState = {
+  services: [],
+  categories: [],
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "services":
+      return { ...state, services: action.payload };
+    case "categories":
+      return { ...state, categories: action.payload };
+  }
+}
+
 const ServicesContext = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initState);
   const [category, setCategory] = useState();
+
+  async function getServices() {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/account/equipments/`);
+      console.log(data);
+      dispatch({
+        type: "services",
+        payload: data,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   const services = [
     {
@@ -92,7 +123,14 @@ const ServicesContext = ({ children }) => {
     },
   ];
 
-  const value = { category, setCategory, services };
+  const value = {
+    getServices,
+    categories: state.categories,
+    services: state.services,
+    category,
+    setCategory,
+    services,
+  };
   return (
     <serviceContext.Provider value={value}>{children}</serviceContext.Provider>
   );
