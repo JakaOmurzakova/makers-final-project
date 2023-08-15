@@ -12,8 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import "../style.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../contexts/AuthContext";
+import logo from "../assets/logo.svg";
 
 const pages = [
   { title: "Home", path: "/" },
@@ -60,11 +61,7 @@ function Navbar() {
             to="/"
             sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
           >
-            <img
-              width={50}
-              src="https://www.svgrepo.com/show/517445/letter-uppercase-square-r.svg"
-              alt=""
-            />
+            <img width={40} src={logo} alt="" />
           </Box>
 
           <Box
@@ -168,11 +165,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <img
-              width={50}
-              src="https://www.svgrepo.com/show/517445/letter-uppercase-square-r.svg"
-              alt=""
-            />
+            <img width={40} src={logo} alt="" />
           </Typography>
           <Box
             sx={{
@@ -183,6 +176,7 @@ function Navbar() {
           >
             {pages.map((page) => (
               <Button
+                className="navbar_items"
                 component={Link}
                 key={page.title}
                 to={page.path}
@@ -196,7 +190,11 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {user ? (
+                  <Avatar alt={user.username} src={user.avatar} />
+                ) : (
+                  <Avatar />
+                )}
               </IconButton>
             </Tooltip>
 
@@ -216,52 +214,16 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-
-              <div className="navbar_logo__menu_container">
-                <img
-                  className="navbar_logo__menu_photo"
-                  src="https://i.redd.it/w0lmb8i7odo51.png"
-                  alt=""
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "25px",
-                  width: "300px",
-                  marginBottom: "50px",
-                }}
-              >
-                <div></div>
-                <div>gfhvjbhkjnkl</div>
-                <div>fgvhbjnkml</div>
-                {user ? (
-                  <Button
-                    onClick={() => logout()}
-                    className="navbar_profile_sign_out"
-                  >
-                    Sign Out
-                  </Button>
-                ) : (
-                  <Button
-                    component={Link}
-                    to="/auth"
-                    className="navbar_profile_sign_out"
-                  >
-                    Sing In
-                  </Button>
-                )}
-
               <div className="profile_container">
                 <div className="navbar_logo__menu_container">
-                  <img
-                    className="navbar_logo__menu_photo"
-                    src="https://i.redd.it/w0lmb8i7odo51.png"
-                    alt=""
-                  />
+                  {user ? (
+                    <img
+                      className="navbar_logo__menu_photo"
+                      src={user.avatar}
+                    />
+                  ) : (
+                    <Avatar sx={{ width: "200px", height: "200px" }} />
+                  )}
                 </div>
                 <div
                   style={{
@@ -274,9 +236,11 @@ function Navbar() {
                     paddngBottom: "50px",
                   }}
                 >
-                  <div></div>
-                  <div>gfhvjbhkjnkl</div>
-                  <div>fgvhbjnkml</div>
+                  <NavLink className="navbar_link" to="/profile">
+                    Profile
+                  </NavLink>
+                  <NavLink className="navbar_link">Food Cart</NavLink>
+                  <NavLink className="navbar_link">Seleted</NavLink>
                   {!user ? (
                     <Button
                       component={Link}
@@ -294,7 +258,6 @@ function Navbar() {
                     </Button>
                   )}
                 </div>
-
               </div>
             </Menu>
           </Box>
