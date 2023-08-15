@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
   font-family: "Quicksand", sans-serif;
   background-color: #192734 !important;
 }
@@ -833,4 +831,37 @@ span {
 }
 .navbar_items:hover {
   transform: scale(1.1);
+}
+
+/* ? DetailPage */
+
+.detailPage_container {
+  margin-top: 100px;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+.detailPage_container_carousel {
+}
+.detailPage_container_info {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  color: #ffffff;
+}
+.detailPage_container_carousel {
+  width: 90vw;
+}
+.detailPage_container_info_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.detailPage_container_info_right {
+  width: 50%;
+  right: 0;
 }
