@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import { useHotelContext } from "../contexts/HotelContext";
+
 import { Link, useSearchParams } from "react-router-dom";
+
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <div className="homepage_container">
       <div className="homepage_map_container">
         <div className="map_container_description1">
-          <div className="description1">
+          <div onClick={() => navigate("/restaurant")} className="description1">
             <div className="description1_image"></div>
             <span>Restaraunt</span>
             <span>wqyiegfiewhu</span>
@@ -83,7 +88,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="map_container_description12">
-          <div className="description12">
+          <div onClick={() => navigate("/cottages")} className="description12">
             <div className="description1_image"></div>
             <span>Cottages</span>
             <span>wqyiegfiewhu</span>

@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/consts";
 import $axios from "../utils/axios";
+import { notify } from "../components/Toastify";
 
 const authContext = createContext();
 
@@ -14,7 +15,8 @@ const AuthContext = ({ children }) => {
 
   async function register(credentials) {
     try {
-      await axios.post(`${BASE_URL}/account/register/`, credentials);
+      await axios.post(`${BASE_URL}/account/registration/`, credentials);
+      notify("Verify your email", "success");
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +30,7 @@ const AuthContext = ({ children }) => {
       );
       localStorage.setItem("tokens", JSON.stringify(tokens));
 
-      const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
+      const { data } = await $axios.get(`${BASE_URL}/account/profile/`);
 
       setUser(data);
     } catch (error) {
@@ -45,7 +47,7 @@ const AuthContext = ({ children }) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
       if (tokens) {
-        const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
+        const { data } = await $axios.get(`${BASE_URL}/account/profile/`);
 
         setUser(data);
       } else {
@@ -58,7 +60,7 @@ const AuthContext = ({ children }) => {
 
   async function activateUser(code) {
     try {
-      await $axios.post(`${BASE_URL}/account/activate/`, { code });
+      await $axios.post(`${BASE_URL}/account/email-verify/`, { code });
       navigate("/");
     } catch (error) {
       console.log(error);

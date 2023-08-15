@@ -2,24 +2,43 @@ import React from "react";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import tiktok from "../assets/tiktok.svg";
+import instagram from "../assets/instagram_icon.svg";
+import twitter from "../assets/twitter_icon.svg";
+import youtube from "../assets/youtube_icon.svg";
+import facebook from "../assets/facebook_logo_icon.svg";
+import linkedIn from "../assets/linkedin_logo_icon.svg";
+import threads from "../assets/threads_logo_brand_sign_icon.svg";
+import telegram from "../assets/telegram_icon.svg";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer_container">
       <div className="footer_container_block1__navigation">
         <div className="footer_container_block1__navigation_item">
           <h2>Services:</h2>
-          <span className="footer_container_block1__navigation_item_sub">
-            Cleaning
-          </span>
-          <span className="footer_container_block1__navigation_item_sub">
+          <Link
+            to="/services"
+            className="footer_container_block1__navigation_item_sub"
+          >
+            Services
+          </Link>
+          <Link
+            to="/restaurant"
+            className="footer_container_block1__navigation_item_sub"
+          >
             Restaraunt
-          </span>
-          <span className="footer_container_block1__navigation_item_sub">
-            Beach entertainmnet
-          </span>
-          <span className="footer_container_block1__navigation_item_sub">
+          </Link>
+          <Link
+            to="/cottages"
+            className="footer_container_block1__navigation_item_sub"
+          >
+            Cottages
+          </Link>
+          <Link className="footer_container_block1__navigation_item_sub">
             Medical aid
-          </span>
+          </Link>
         </div>
 
         <div className="footer_container_block1__navigation_item"></div>
@@ -27,34 +46,43 @@ const Footer = () => {
       <div className="footer_container_block2__social-networks">
         <h2> Social Networks</h2>
         <div className="footer_container_block2__social-networks_sub_container">
-          <img
-            src="https://img.icons8.com/?size=1x&id=32292&format=png"
-            alt=""
-          />
+          <Link to="https://www.tiktok.com/explore" target="_blank">
+            <img src={tiktok} alt="" />
+          </Link>
 
-          <img
-            src="https://img.icons8.com/?size=1x&id=9R1sV3QvY18K&format=png"
-            alt=""
-          />
-
-          <img
-            src="https://img.icons8.com/?size=1x&id=16712&format=png"
-            alt=""
-          />
-
-          <img
-            src="https://img.icons8.com/?size=1x&id=37325&format=png"
-            alt=""
-          />
-
-          <img
-            src="https://img.icons8.com/?size=1x&id=84521&format=png"
-            alt=""
-          />
-
-          <img src="https://img.icons8.com/?size=1x&id=447&format=png" alt="" />
-          <img src="https://img.icons8.com/?size=1x&id=435&format=png" alt="" />
-          <img src="https://img.icons8.com/?size=1x&id=437&format=png" alt="" />
+          <Link
+            to="https://www.youtube.com/watch?v=BqC92i1yXoI&pp=ygUOaG90ZWwgbWFsZGl2ZXM%3D"
+            target="_blank"
+          >
+            <img src={youtube} alt="" />
+          </Link>
+          <Link
+            to="https://www.facebook.com/exploremaldiveshotels/"
+            target="_blank"
+          >
+            <img src={facebook} alt="" />
+          </Link>
+          <Link to="https://www.instagram.com/maldives/" target="_blank">
+            <img src={instagram} alt="" />
+          </Link>
+          <Link
+            to="https://twitter.com/visitmaldives?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+            target="_blank"
+          >
+            <img src={twitter} alt="" />
+          </Link>
+          <Link
+            to="https://mv.linkedin.com/company/visitmaldives"
+            target="_blank"
+          >
+            <img src={linkedIn} alt="" />
+          </Link>
+          <Link to="https://www.threads.net/" target="_blank">
+            <img src={threads} alt="" />
+          </Link>
+          <Link to="https://t.me/Harrmony_Haven_bot" target="_blank">
+            <img src={telegram} alt="" />
+          </Link>
         </div>
       </div>
       <div className="footer_container_block3__about-us">

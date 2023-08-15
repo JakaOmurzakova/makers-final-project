@@ -35,10 +35,10 @@ body {
 /* ? Footer */
 .footer_container {
   width: 100%;
-  height: 250px;
+  height: 200px;
   background-color: #15202b;
   color: whitesmoke;
-  left: 0;
+  /*left: 0;*/
   bottom: 0;
   display: flex;
   justify-content: space-evenly;
@@ -59,6 +59,14 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  margin-top: 20px;
+}
+.footer_container_block2__social-networks_sub_container img {
+  width: 50px;
+  transition: 0.3s;
+}
+.footer_container_block2__social-networks_sub_container img:hover {
+  transform: scale(1.3);
 }
 .footer_container_block1__navigation,
 .footer_container_block2__social-networks,
@@ -168,6 +176,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .map_container_description1:hover .description1 {
@@ -447,6 +456,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 .map_container_description12:hover .description12 {
   display: flex;
@@ -784,4 +794,40 @@ span {
 }
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
   color: whitesmoke !important;
+}
+
+.navbar_profile_sign_out {
+  font-size: 16px !important;
+  margin-bottom: 10px !important;
+  transition: 0.3s !important;
+}
+.navbar_profile_sign_out:hover {
+  transform: scale(1.3);
+}
+
+.navbar_link {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: 0.3s;
+}
+.navbar_link:hover {
+  transform: scale(1.3);
+}
+
+.footer_container_block1__navigation_item_sub {
+  font-size: 18px;
+  transition: 0.3s;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.footer_container_block1__navigation_item_sub:hover {
+  transform: scale(1.3);
+}
+
+.navbar_items {
+  transition: 0.2s !important;
+}
+.navbar_items:hover {
+  transform: scale(1.1);
 }

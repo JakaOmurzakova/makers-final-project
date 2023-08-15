@@ -71,27 +71,44 @@ export default function AuthPage() {
             sx={{ mt: 1 }}
           >
             {!isLogin && (
-              <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
-                gap={5}
-                sx={{ color: "white" }}
-              >
+              <Box sx={{ color: "white" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: "15px",
+                  }}
+                >
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="First name"
+                    name="first_name"
+                    autoFocus
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="Last name"
+                    name="last_name"
+                  />
+                </Box>
+
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  label="First name"
-                  name="first_name"
-                  autoFocus
+                  label="User Name"
+                  name="username"
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  label="Last name"
-                  name="last_name"
+                  type="file"
+                  name="avatar"
                 />
               </Box>
             )}
@@ -147,7 +164,13 @@ export default function AuthPage() {
               {isLogin ? "Sign in" : "Sign up"}
             </Button>
             <Grid container>
-              <Grid item xs></Grid>
+              <Grid item xs>
+                {isLogin && (
+                  <Link href="#" variant="body2">
+                    Change password
+                  </Link>
+                )}
+              </Grid>
               <Grid item>
                 <Link
                   onClick={() => setIsLogin(!isLogin)}
@@ -162,7 +185,6 @@ export default function AuthPage() {
             </Grid>
           </Box>
         </Box>
-        {/*<Copyright sx={{ mt: 8, mb: 4 }} />*/}
       </Container>
     </ThemeProvider>
   );
