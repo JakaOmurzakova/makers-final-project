@@ -3,7 +3,7 @@ import { useHotelContext } from "../contexts/HotelContext";
 
 import { Link, useSearchParams } from "react-router-dom";
 
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -12,84 +12,72 @@ const HomePage = () => {
       <div className="homepage_map_container">
         <div className="map_container_description1">
           <div onClick={() => navigate("/restaurant")} className="description1">
-            <div className="description1_image"></div>
             <span>Restaraunt</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description2">
           <div className="description2">
-            <div className="description1_image"></div>
             <span>Conference Hall</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description3">
           <div className="description3">
-            <div className="description1_image"></div>
             <span>Yacht</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description4">
           <div className="description4">
-            <div className="description1_image"></div>
             <span>Yacht</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description5">
           <div className="description5">
-            <div className="description1_image"></div>
             <span>Swimming Pool</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description6">
           <div className="description6">
-            <div className="description1_image"></div>
             <span>Tennis Court</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description7">
           <div className="description7">
-            <div className="description1_image"></div>
             <span>GYM</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description8">
           <div className="description8">
-            <div className="description1_image"></div>
             <span>Aquapark</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description9">
           <div className="description9">
-            <div className="description1_image"></div>
             <span>Baby concept</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description10">
           <div className="description10">
-            <div className="description1_image"></div>
             <span>SPA</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description11">
           <div className="description11">
-            <div className="description1_image"></div>
             <span>Golf</span>
             <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description12">
           <div onClick={() => navigate("/cottages")} className="description12">
-            <div className="description1_image"></div>
             <span>Cottages</span>
             <span>wqyiegfiewhu</span>
           </div>
