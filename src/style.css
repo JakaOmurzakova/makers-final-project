@@ -162,6 +162,7 @@ span {
 /* ? Map item restaraunt */
 .homepage_map_container {
   position: relative;
+  transition: 0.3s;
 }
 .map_container_description1 {
   position: absolute;
@@ -169,6 +170,7 @@ span {
   height: 100px;
   left: 150px;
   top: 200px;
+  transition: 1s;
 }
 
 .description1 {
@@ -178,6 +180,7 @@ span {
   display: none;
   border-radius: 10px;
   cursor: pointer;
+  color: white;
 }
 
 .map_container_description1:hover .description1 {
@@ -185,14 +188,101 @@ span {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: all 0.6s;
+  transition: 0.3s;
 }
 
 .description1_image {
   width: 100px;
   height: 100px;
-
-  background-image: url(https://png.pngtree.com/element_our/20200609/ourlarge/pngtree-restaurant-shop-image_2224376.jpg);
+  background-image: url(../src/assets/map/ресторан.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description2_image {
+  width: 150px;
+  height: 100px;
+  background-image: url(../src/assets/map/conference\ hall.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description3_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/yacht.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description4_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/yacht.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description5_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/swimming_pool.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description6_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/tennis.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description7_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/gym.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description8_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/aquapark.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description9_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/baby_concept.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description10_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/spa.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description11_image {
+  width: 150px;
+  height: 110px;
+  background-image: url(../src/assets/map/golf.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description12_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/cottages.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -213,6 +303,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description2:hover .description2 {
@@ -238,6 +329,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description3:hover .description3 {
@@ -264,6 +356,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description4:hover .description4 {
@@ -288,6 +381,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description5:hover .description5 {
@@ -313,6 +407,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description6:hover .description6 {
@@ -337,6 +432,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description7:hover .description7 {
   display: flex;
@@ -360,6 +456,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description8:hover .description8 {
   display: flex;
@@ -383,6 +480,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description9:hover .description9 {
   display: flex;
@@ -406,6 +504,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description10:hover .description10 {
   display: flex;
@@ -432,6 +531,7 @@ span {
   right: 10px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description11:hover .description11 {
   display: flex;
@@ -458,6 +558,7 @@ span {
   display: none;
   border-radius: 10px;
   cursor: pointer;
+  color: white;
 }
 .map_container_description12:hover .description12 {
   display: flex;
