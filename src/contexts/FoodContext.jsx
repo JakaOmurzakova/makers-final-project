@@ -57,7 +57,7 @@ const FoodContext = ({ children }) => {
 
   async function getOneDish(id) {
     try {
-      const { data } = await $axios.get(`${BASE_URL}/dishes/${id}`);
+      const { data } = await $axios.get(`${BASE_URL}/account/product/${id}`);
       dispach({
         type: ACTIONS.oneDish,
         payload: data,
@@ -69,7 +69,10 @@ const FoodContext = ({ children }) => {
 
   async function addDish(newDish) {
     try {
-      const { data } = await $axios.post(`${BASE_URL}/dishes/`, newDish);
+      const { data } = await $axios.post(
+        `${BASE_URL}/account/product/`,
+        newDish
+      );
     } catch (error) {
       console.log(error);
     }
@@ -77,7 +80,7 @@ const FoodContext = ({ children }) => {
 
   async function deleteDish(id) {
     try {
-      await $axios.delete(`${BASE_URL}/dishes/${id}/`);
+      await $axios.delete(`${BASE_URL}/account/product/${id}/`);
       getDishes();
     } catch (error) {
       console.log(error);
@@ -86,7 +89,7 @@ const FoodContext = ({ children }) => {
 
   async function editDish(id, newData) {
     try {
-      await $axios.patch(`${BASE_URL}/dishes/${id}/`, newData);
+      await $axios.patch(`${BASE_URL}/account/product/${id}/`, newData);
     } catch (error) {
       console.log(error);
     }
@@ -94,7 +97,9 @@ const FoodContext = ({ children }) => {
 
   async function getCategories() {
     try {
-      const { data } = await $axios.get(`${BASE_URL}/categories/`);
+      const { data } = await $axios.get(
+        `${BASE_URL}/account/category_restaurant/`
+      );
       dispach({
         type: ACTIONS.categories,
         payload: data,
@@ -117,7 +122,6 @@ const FoodContext = ({ children }) => {
     getCategories,
     page,
     setPage,
-
   };
   return <foodContext.Provider value={value}>{children}</foodContext.Provider>;
 };

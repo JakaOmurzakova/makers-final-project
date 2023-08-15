@@ -22,9 +22,6 @@ export default function AddRoomPage() {
     image2: "",
     image3: "",
     image4: "",
-    rating: "",
-    rooms: [1],
-    rating: 1,
   });
 
   function handleChange(e) {
@@ -104,26 +101,8 @@ export default function AddRoomPage() {
               value={formValue.description}
               onChange={handleChange}
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="rooms"
-              label="Rooms"
-              value={formValue.rooms}
-              onChange={handleChange}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="rating"
-              label="Rating"
-              value={formValue.rating}
-              onChange={handleChange}
-            />
 
-            {/*<TextField
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -132,7 +111,7 @@ export default function AddRoomPage() {
               type="number"
               value={formValue.price}
               onChange={handleChange}
-            />*/}
+            />
 
             <FormControl fullWidth>
               <InputLabel>Category</InputLabel>

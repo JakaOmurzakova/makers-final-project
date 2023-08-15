@@ -11,9 +11,10 @@ import ActivationPage from "../pages/ActivationPage";
 import AddRoomPage from "../pages/hotelRooms/AddRoomPage";
 import EditRoomPage from "../pages/hotelRooms/EditRoomPage";
 
-import MenuPage from "../pages/MenuPage";
 import CottagePage from "../pages/hotelRooms/CottagePage";
 import HotelDetailPage from "../pages/hotelRooms/HotelDetailPage";
+import ProfilePage from "../pages/ProfilePage";
+import MenuPage from "../pages/restaurant/MenuPage";
 
 const MainRoute = () => {
   return (
@@ -30,6 +31,7 @@ const MainRoute = () => {
         <Route path="/add-room" element={<AddRoomPage />} />
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
         <Route path="/room-detail/:id" element={<HotelDetailPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
       <Route path="/auth" element={<AuthPage />} />
       <Route path="*" element={<NotFoundPage />} />
