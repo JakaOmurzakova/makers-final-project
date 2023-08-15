@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHotelContext } from "../contexts/HotelContext";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 const HomePage = () => {
   return (
     <div className="homepage_container">
@@ -91,6 +91,47 @@ const HomePage = () => {
         </div>
       </div>
 
+      <div className="homepage_crud-container">
+        <div className="homepage_crud-container_item">
+          <img
+            src="https://c4.wallpaperflare.com/wallpaper/527/403/663/maldives-resort-sea-madives-paradise-wallpaper-preview.jpg"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+        <div className="homepage_crud-container_item ">
+          <img
+            src="https://www.tourism-of-india.com/blog/wp-content/uploads/2022/01/Six-Senses-Laamu.jpg"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+        <div className="homepage_crud-container_item blur2">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220707113925-17-maldives-best-overwater-villas-velaa.jpg?c=original&q=w_1280,c_fill"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+        <div className="homepage_crud-container_item blur3">
+          <img
+            src="https://ik.imgkit.net/3vlqs5axxjf/TAW/uploadedImages/All_Gateways/ASPAC/Hotel_Review/FourSeasonsMaldives_Hero.jpg?tr=w-1200%2Cfo-auto"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+      </div>
+      <Link to="/cottages" className="homepage_crud-container_item_span">
+        View More&#8680;
+      </Link>
       <div className="homepage_card_container">
         <h2 className="homepage_text">THE BEST HOTEL FOR YOU</h2>
         <div className="homepage_content_container">
@@ -133,7 +174,6 @@ const HomePage = () => {
             />
           </div>
           <span>
-            {" "}
             Discover Tranquility: Immerse yourself in the soothing sounds of
             waves and gentle ocean breezes. Our strategically designed rooms
             provide stunning panoramic views of the sparkling turquoise waters

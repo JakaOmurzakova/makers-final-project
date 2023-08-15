@@ -461,6 +461,57 @@ span {
   }
 }
 
+/* ? HomaPage mini CRUD container */
+.homepage_crud-container {
+  margin-top: 100px;
+  width: 80%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  color: whitesmoke;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+.homepage_crud-container_item {
+  width: 290px;
+  height: 354px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(16, 96, 102), -15px -15px 30px rgb(16, 96, 102);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+.homepage_crud-container_item:hover {
+  transform: scale(1.15);
+}
+.homepage_crud-container_item img {
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+.blur2 {
+  filter: blur(0.1rem);
+}
+.blur3 {
+  filter: blur(0.3rem);
+}
+.homepage_crud-container_item_span {
+  font-size: 4vh;
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+.homepage_crud-container_item_span:hover {
+  transform: scale(1.1);
+}
+
 /* ? HomePage edits */
 .homepage_card_container {
   margin-top: 100px;
