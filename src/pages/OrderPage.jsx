@@ -4,6 +4,7 @@ import moment from "moment";
 import { useOrderContext } from "../contexts/OrderContext";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../style.css";
 
 const OrderPage = () => {
   moment.updateLocale("en", { week: { dow: 1 } });

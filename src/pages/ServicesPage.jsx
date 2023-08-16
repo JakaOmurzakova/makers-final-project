@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useServiceContext } from "../contexts/ServicesContext";
 import { Box, Container } from "@mui/system";
 import { Link } from "react-router-dom";
+import "../style.css";
 
 const ServicesPage = () => {
   const { fetchServices, services } = useServiceContext();
