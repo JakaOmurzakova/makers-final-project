@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useHotelContext } from "../../contexts/HotelContext";
 import { LIMIT } from "../../utils/consts";
+import "../../roomStyleCard.css";
 
 const RoomFilter = () => {
   const { setPage } = useHotelContext();
