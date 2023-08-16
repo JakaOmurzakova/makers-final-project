@@ -18,7 +18,7 @@ export default function AddProductPage() {
     title: "",
     description: "",
     category: "",
-    image: "",
+    image_product: "",
     price: "",
   });
 
@@ -61,7 +61,7 @@ export default function AddProductPage() {
       title: "",
       description: "",
       category: "",
-      image: "",
+      image_product: "",
       price: "",
     });
   };
@@ -123,7 +123,7 @@ export default function AddProductPage() {
               required
               fullWidth
               type="file"
-              name="image"
+              name="image_product"
               //  value={formValue.image}
               onChange={handleChange}
             />

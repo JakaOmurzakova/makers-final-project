@@ -12,11 +12,13 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
-    <Grid container spacing={2} justifyContent="center" gap="15px">
-      {dishes.map((item) => (
-        <MenuItem key={item.id} item={item} />
-      ))}
-    </Grid>
+    <div>
+      <Grid container spacing={2} justifyContent="center" gap="15px">
+        {dishes.map((item) => (
+          <MenuItem key={item.id} item={item} />
+        ))}
+      </Grid>
+    </div>
   );
 };
 
