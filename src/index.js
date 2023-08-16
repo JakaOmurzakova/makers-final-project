@@ -13,6 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HotelContext from "./contexts/HotelContext";
 import OrderContext from "./contexts/OrderContext";
 import Toastify from "./components/Toastify";
+import CommentContext from "./contexts/CommentContext";
 import FoodContext from "./contexts/FoodContext";
 import CartContext from "./contexts/CartContext";
 
@@ -29,6 +30,12 @@ root.render(
                 <App />
               </OrderContext>
             </CartContext>
+            <OrderContext>
+              <CommentContext>
+                <Toastify />
+                <App />
+              </CommentContext>
+            </OrderContext>
           </HotelContext>
         </FoodContext>
       </ServicesContext>

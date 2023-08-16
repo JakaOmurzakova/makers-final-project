@@ -46,6 +46,7 @@ body {
 }
 .footer_container_block1__navigation {
   display: flex;
+  margin-left: 90px;
 }
 .footer_container_block2__social-networks {
   display: flex;
@@ -104,6 +105,9 @@ span {
   .footer_container_block2__social-networks_sub_container img {
     width: 40px;
   }
+  .footer_container_block1__navigation {
+    margin-left: 50px;
+  }
 }
 @media screen and (max-width: 582px) {
   .footer_container {
@@ -123,6 +127,9 @@ span {
   }
   .footer_container_block2__social-networks_sub_container img {
     width: 30px;
+  }
+  .footer_container_block1__navigation {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 377px) {
@@ -305,6 +312,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description2:hover .description2 {
@@ -331,6 +339,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description3:hover .description3 {
@@ -358,6 +367,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description4:hover .description4 {
@@ -383,6 +393,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description5:hover .description5 {
@@ -409,6 +420,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description6:hover .description6 {
@@ -434,6 +446,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description7:hover .description7 {
   display: flex;
@@ -458,6 +471,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description8:hover .description8 {
   display: flex;
@@ -482,6 +496,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description9:hover .description9 {
   display: flex;
@@ -506,6 +521,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description10:hover .description10 {
   display: flex;
@@ -533,6 +549,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description11:hover .description11 {
   display: flex;
@@ -845,13 +862,14 @@ span {
   }
 }
 
-/* todo Servies page */
+/* todo Service page */
 .servicepage_container {
   /* background-color: #2c3333; */
 
   background-color: #192734;
   /* background-color: #22303c; */
   color: whitesmoke;
+  width: 100%;
 }
 .services_hero {
   height: 1000px;
@@ -882,6 +900,35 @@ span {
   width: 800px;
   text-align: center;
   font-size: 22px;
+}
+
+@media screen and (max-width: 820px) {
+  .services_hero_text-container {
+    width: 50%;
+    height: 450px;
+  }
+  .services_hero h2 {
+    font-size: 32px;
+  }
+  .services_hero_text-container p {
+    width: 80%;
+
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .services_hero_text-container {
+    width: 80%;
+  }
+
+  .services_hero_text-container p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .services_hero h2 {
+    font-size: 24px;
+  }
 }
 
 /* ? Authpage */

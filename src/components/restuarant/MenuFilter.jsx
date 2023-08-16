@@ -1,12 +1,12 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useHotelContext } from "../../contexts/HotelContext";
 import { LIMIT } from "../../utils/consts";
-import "../../roomStyleCard.css";
+import { useFoodContext } from "../../contexts/FoodContext";
+import "../../menuStyleCard.css";
 
-const RoomFilter = () => {
-  const { setPage } = useHotelContext();
+const MenuFilter = () => {
+  const { setPage } = useFoodContext();
   const [searchPar, setSearchPar] = useSearchParams();
   const [category, setCategory] = useState(searchPar.get("category") || "all");
   const handleChange = (_, val) => {
@@ -34,7 +34,7 @@ const RoomFilter = () => {
 
   return (
     <ToggleButtonGroup
-      className="filter_hotel"
+      className="menu_filter_container"
       color="primary"
       value={category}
       exclusive
@@ -42,10 +42,12 @@ const RoomFilter = () => {
       aria-label="Platform"
     >
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
-          className: "room_filter_text",
+
           fontWeight: 700,
+
           borderRadius: "25px",
         }}
         value="all"
@@ -53,45 +55,61 @@ const RoomFilter = () => {
         All
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
-          className: "room_filter_text",
+
           fontWeight: 700,
 
           borderRadius: "50px",
         }}
-        value="oneBedroom"
+        value="salad"
       >
-        One Bedroom
+        salad
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
-          className: "room_filter_text",
+
+          fontWeight: 700,
+
+          borderRadius: "50px",
+        }}
+        value="breakfast"
+      >
+        breakfast
+      </ToggleButton>
+      <ToggleButton
+        className="filter_text"
+        sx={{
+          border: "none",
+
           fontWeight: 700,
           borderRadius: "50px",
         }}
-        value="twoBedroom"
+        value="lanch"
       >
-        Two Bedroom
+        lanch
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
-          className: "room_filter_text",
+
           fontWeight: 700,
           borderRadius: "50px",
         }}
-        value="threeBedroom"
+        value="dinner"
       >
-        Three Bedroom
+        dinner
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
           fontWeight: 700,
           borderRadius: "50px",
-          className: "room_filter_text",
         }}
         value="vip"
       >
@@ -101,4 +119,4 @@ const RoomFilter = () => {
   );
 };
 
-export default RoomFilter;
+export default MenuFilter;

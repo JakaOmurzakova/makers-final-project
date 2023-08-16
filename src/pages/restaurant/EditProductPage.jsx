@@ -13,50 +13,61 @@ import { useNavigate, useParams } from "react-router-dom";
 const defaultTheme = createTheme();
 
 export default function EditProductPage() {
-  const { editDish, getOneDish, dish } = useFoodContext();
+  const { editDish, getOneDish, getCategories, oneDish, categories } =
+    useFoodContext();
   const { id } = useParams();
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({
     title: "",
-    description: "",
+
     category: "",
-    image: "",
+    image_product: "",
     price: "",
   });
+
+  useEffect(() => {
+    getCategories();
+    getOneDish(id);
+  }, []);
+
+  useEffect(() => {
+    if (oneDish) {
+      setFormValue({ ...oneDish, image: "" });
+    }
+  }, [oneDish]);
 
   useEffect(() => {
     getOneDish(id);
   }, []);
 
-  useEffect(() => {
-    if (dish) {
-      setFormValue(dish);
-    }
-  }, [dish]);
-
-  //function handleChange(e) {
-  //  if (e.target.name === "image") {
-  //    setFormValue({
-  //      ...formValue,
-  //      image: e.target.files[0],
-  //    });
-  //  } else {
-  //    setFormValue({
-  //      ...formValue,
-  //      [e.target.name]: e.target.value,
-  //    });
+  //useEffect(() => {
+  //  if (dish) {
+  //    setFormValue(dish);
   //  }
-  //}
+  //}, [dish]);
+
   function handleChange(e) {
-    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+    if (e.target.name === "image") {
+      setFormValue({
+        ...formValue,
+        image: e.target.files[0],
+      });
+    } else {
+      setFormValue({
+        ...formValue,
+        [e.target.name]: e.target.value,
+      });
+    }
   }
+  //function handleChange(e) {
+  //  setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  //}
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
       !formValue.title.trim() ||
       !formValue.description.trim() ||
-      !formValue.image.trim() ||
       !formValue.price
     ) {
       return;
@@ -64,10 +75,14 @@ export default function EditProductPage() {
 
     console.log(formValue);
 
-    //const data = new FormData(event.currentTarget);
+    const data = new FormData(event.currentTarget);
 
-    //addRoom(data);
-    editDish(id, formValue);
+    if (!formValue) {
+      data.delete("image");
+      editDish(id, data);
+    } else {
+      editDish(id, data);
+    }
 
     navigate("/menu");
   };
@@ -107,16 +122,6 @@ export default function EditProductPage() {
               margin="normal"
               required
               fullWidth
-              name="description"
-              label="Description"
-              value={formValue.description}
-              onChange={handleChange}
-            />
-
-            <TextField
-              margin="normal"
-              required
-              fullWidth
               name="price"
               label="Price"
               type="number"
@@ -128,10 +133,10 @@ export default function EditProductPage() {
               margin="normal"
               required
               fullWidth
-              name="image"
-              //type="file"
-              label="Image"
-              value={formValue.image}
+              name="image_product"
+              type="file"
+              //label="Image"
+              //value={formValue.image}
               onChange={handleChange}
             />
 
@@ -143,11 +148,11 @@ export default function EditProductPage() {
                 label="Category"
                 name="category"
               >
-                <MenuItem value={"salad"}>Salad</MenuItem>
-                <MenuItem value={"breakfast"}>Breakfast</MenuItem>
-                <MenuItem value={"lanch"}>Lanch</MenuItem>
-                <MenuItem value={"dinner"}>Dinner</MenuItem>
-                <MenuItem value={"fruits"}>Fruits</MenuItem>
+                {categories.map((category) => (
+                  <MenuItem key={category.id} value={category.id}>
+                    {category.category}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
 

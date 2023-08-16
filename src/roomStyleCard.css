@@ -3,6 +3,7 @@
   height: 400px;
   position: relative;
   border-radius: 10px;
+  margin-left: 16px;
 }
 
 .card-container::before {
@@ -245,4 +246,21 @@
   gap: 30px !important;
   justify-content: end !important;
   padding-bottom: 30px !important;
+}
+
+/* ? Room filter */
+
+.filter_hotel {
+  margin: 0 0 50px 10px;
+}
+
+@media screen and (max-width: 456px) {
+  .css-1gjgmky-MuiToggleButtonGroup-root {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .MuiToggleButtonGroup-grouped:not(:last-of-type) {
+    font-size: 9px;
+  }
 }
