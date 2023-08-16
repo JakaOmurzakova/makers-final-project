@@ -194,3 +194,18 @@
   display: flex !important;
   justify-content: center !important;
 }
+@media screen and (max-width: 456px) {
+  .filter_text {
+    font-size: 10px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .filter_text {
+    font-size: 8px !important;
+  }
+  .card_size {
+    width: 300px;
+  }
+}
+
+/* ?Card */

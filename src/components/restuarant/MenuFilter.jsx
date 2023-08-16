@@ -55,6 +55,7 @@ const MenuFilter = () => {
         All
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -67,6 +68,7 @@ const MenuFilter = () => {
         salad
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -79,6 +81,7 @@ const MenuFilter = () => {
         breakfast
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -90,6 +93,7 @@ const MenuFilter = () => {
         lanch
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -101,6 +105,7 @@ const MenuFilter = () => {
         dinner
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
           fontWeight: 700,
