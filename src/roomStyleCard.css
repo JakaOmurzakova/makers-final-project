@@ -37,8 +37,6 @@
   height: 100%;
 
   object-fit: cover;
-=======
-  object-fit: fill;
 
   overflow: hidden;
   fill: #e8e8e8;
