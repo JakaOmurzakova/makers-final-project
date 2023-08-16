@@ -188,3 +188,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* ? menu filter */
+.menu_filter_container {
+  display: flex !important;
+  justify-content: center !important;
+}
