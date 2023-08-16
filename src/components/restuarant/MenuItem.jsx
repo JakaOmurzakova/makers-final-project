@@ -4,7 +4,6 @@ import "../../menuStyleCard.css";
 const MenuItem = () => {
   return (
     <div className="menu_card">
-      <h2>Order Dishes and it will automatically arrive to your room</h2>
       <div className="card_position">
         <div className="card_size">
           <div className="card__img">
