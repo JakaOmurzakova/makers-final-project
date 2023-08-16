@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
-import { BASE_URL, HOTEL_ACTION } from "../utils/consts";
+import { API_HOTEL, BASE_URL, HOTEL_ACTION } from "../utils/consts";
 import { useSearchParams } from "react-router-dom";
 import $axios from "../utils/axios";
 
@@ -36,13 +36,14 @@ const HotelContext = ({ children }) => {
   async function getRooms() {
     try {
       const { data } = await $axios.get(
-        `${BASE_URL}/account/hotels/${window.location.search}`
+        `${BASE_URL}hotels/${window.location.search}`
       );
+      console.log(data);
       //const totalCount = Math.ceil()
 
       dispach({
         type: HOTEL_ACTION.rooms,
-        payload: data,
+        payload: data.results,
       });
     } catch (e) {
       console.log(e);
@@ -51,7 +52,7 @@ const HotelContext = ({ children }) => {
 
   async function getOneRoom(id) {
     try {
-      const { data } = await $axios.get(`${BASE_URL}/account/hotels/${id}`);
+      const { data } = await $axios.get(`${BASE_URL}hotels/${id}`);
       dispach({
         type: HOTEL_ACTION.oneRoom,
         payload: data,
@@ -63,7 +64,7 @@ const HotelContext = ({ children }) => {
 
   async function addRoom(newRoom) {
     try {
-      await $axios.post(`${BASE_URL}/account/hotels/`, newRoom);
+      await $axios.post(`${BASE_URL}hotels/`, newRoom);
     } catch (e) {
       console.log(e);
     }
@@ -71,7 +72,7 @@ const HotelContext = ({ children }) => {
 
   async function deleteRoom(id) {
     try {
-      await $axios.delete(`${BASE_URL}/account/hotels/${id}`);
+      await $axios.delete(`${BASE_URL}hotels/${id}`);
       getRooms();
     } catch (e) {
       console.log(e);
@@ -80,27 +81,14 @@ const HotelContext = ({ children }) => {
 
   async function editRoom(id, newData) {
     try {
-      await $axios.patch(`${BASE_URL}/account/hotels/${id}`, newData);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  async function getCategories() {
-    try {
-      const { data } = await $axios.get(`${BASE_URL}/room-types/`);
-
-      dispach({
-        type: HOTEL_ACTION.categories,
-        payload: data,
-      });
+      await $axios.patch(`${BASE_URL}hotels/${id}`, newData);
     } catch (e) {
       console.log(e);
     }
   }
 
   async function getDetail(id) {
-    const { data } = await $axios.get(`${BASE_URL}/hotels/${id}/`);
+    const { data } = await $axios.get(`${BASE_URL}hotels/${id}`);
     setDetail(data);
   }
 
@@ -116,7 +104,6 @@ const HotelContext = ({ children }) => {
     editRoom,
     page,
     setPage,
-    getCategories,
     getDetail,
     detail,
   };

@@ -13,7 +13,7 @@ const RoomItem = ({ item }) => {
       <div className="card-container">
         <div className="card-block">
           <div className="img-content">
-            <img src={item.results.image1} />
+            <img src={item.image1} />
           </div>
           <div className="content">
             <p className="heading">{item.title}</p>

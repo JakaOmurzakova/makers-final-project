@@ -18,10 +18,11 @@ export default function AddRoomPage() {
     title: "",
     description: "",
     category: "",
-    image1: "",
-    image2: "",
-    image3: "",
-    image4: "",
+    //image1: "",
+    //image2: "",
+    //image3: "",
+    //image4: "",
+    price: "",
   });
 
   function handleChange(e) {
@@ -37,10 +38,17 @@ export default function AddRoomPage() {
       });
     }
   }
+  //function handleChange(e) {
+  //  setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  //}
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!formValue.title.trim() || !formValue.description.trim()) {
+    if (
+      !formValue.title.trim() ||
+      !formValue.description.trim() ||
+      !formValue.price
+    ) {
       return;
     }
 
@@ -49,15 +57,13 @@ export default function AddRoomPage() {
     const data = new FormData(event.currentTarget);
 
     addRoom(data);
+    //addRoom(formValue);
 
     setFormValue({
       title: "",
       description: "",
       category: "",
-      image1: "",
-      image2: "",
-      image3: "",
-      image4: "",
+      price: "",
     });
   };
 
@@ -113,6 +119,46 @@ export default function AddRoomPage() {
               onChange={handleChange}
             />
 
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="image1"
+              type="file"
+              //label="Image1"
+              //value={formValue.image1}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="image2"
+              type="file"
+              //label="Image2"
+              //value={formValue.image2}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="image3"
+              type="file"
+              //label="Image3"
+              //value={formValue.image3}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              //name="image4"
+              type="file"
+              label="Image4"
+              //value={formValue.image4}
+              onChange={handleChange}
+            />
             <FormControl fullWidth>
               <InputLabel>Category</InputLabel>
               <Select
@@ -128,46 +174,13 @@ export default function AddRoomPage() {
               </Select>
             </FormControl>
 
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              type="file"
-              name="image1"
-              onChange={handleChange}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              type="file"
-              name="image2"
-              onChange={handleChange}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              type="file"
-              name="image3"
-              onChange={handleChange}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              type="file"
-              name="image4"
-              onChange={handleChange}
-            />
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Add New Product
+              Add New Room
             </Button>
           </Box>
         </Box>
