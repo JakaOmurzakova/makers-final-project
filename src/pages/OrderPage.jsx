@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import moment from "moment";
 import { useOrderContext } from "../contexts/OrderContext";
+import { useEffect } from "react";
 
 const OrderPage = () => {
   moment.updateLocale("en", { week: { dow: 1 } });
   const startOfWeek = moment().startOf("week");
   const [selectedIteration, setSelectedIteration] = useState(null);
-  // const { orderCard } = useOrderContext();
+  const { orders, postOrder, getOrders } = useOrderContext();
+
+  useEffect(() => {
+    getOrders();
+  }, []);
 
   const daysOfWeek = [
     "Monday",
@@ -31,45 +36,59 @@ const OrderPage = () => {
     "17:00",
   ];
 
-  function order(e) {
-    e.style.backgroundColor = "green";
-  }
-  const handleCellClick = (iteration) => {
-    setSelectedIteration(iteration);
+  const date = daysOfWeek.map((_, index) =>
+    startOfWeek.clone().add(index, "day").format("l")
+  );
+
+  const handleOrder = (time, day, name) => {
+    const newOrder = {
+      titleOrder: "Massages",
+      time: time,
+      day: day,
+      user: name,
+    };
+
+    postOrder(newOrder);
+    getOrders();
   };
 
-  // const generateCellContent = (iteration) => {
-
-  //   return iteration !== null ? iteration + 1 : "-";
-
-  //   // orderCard();
+  // const handleCellClick = (iteration) => {
+  //   setSelectedIteration(iteration);
   // };
 
-  const getSelectedIterationValue = () => {
-    if (selectedIteration !== null) {
-      // Do something with the selected iteration value
-      return selectedIteration + 1; // Adding 1 to match the numbering
-    }
-    return null;
-  };
+  // const generateCellContent = (iteration) => {
+  //   return iteration !== null ? iteration + 1 : "-";
+  // };
+
+  // const getSelectedIterationValue = () => {
+  //   if (selectedIteration !== null) {
+  //     // Do something with the selected iteration value
+  //     return selectedIteration + 1; // Adding 1 to match the numbering
+  //   }
+  //   return null;
+  // };
 
   return (
     <div>
-      <Table bordered style={{ marginTop: "100px" }}>
+      <Table
+        bordered
+        style={{ marginTop: "100px", backgroundColor: "#0d7e83" }}
+      >
         <thead>
           <tr>
-            <th style={{ backgroundColor: "#f8c43a" }}>Days of Week</th>
+            <th style={{ backgroundColor: "#ffaf87" }}>Days of Week</th>
             {daysOfWeek.map((day) => (
-              <th key={day} style={{ backgroundColor: "#f8c43a" }}>
+              <th key={day} style={{ backgroundColor: "#ffaf87" }}>
                 {day}
               </th>
             ))}
           </tr>
           <tr>
-            <th style={{ backgroundColor: "#f8c43a" }}>Working time</th>
-            {daysOfWeek.map((_, index) => (
-              <th key={index} style={{ backgroundColor: "#f8c43a" }}>
-                {startOfWeek.clone().add(index, "day").format("l")}
+            <th style={{ backgroundColor: "#ffaf87" }}>Working time</th>
+            {date.map((item) => (
+              <th key={item} style={{ backgroundColor: "#ffaf87" }}>
+                {/* {startOfWeek.clone().add(item, "day").format("l")} */}
+                {item}
               </th>
             ))}
           </tr>
@@ -79,43 +98,48 @@ const OrderPage = () => {
             <tr key={time}>
               <td
                 style={{
-                  backgroundColor: "#f8c43a",
+                  backgroundColor: "#ffaf87",
                   display: "flex",
                   justifyContent: "center",
                 }}
               >
                 {time}
               </td>
-              {daysOfWeek.map((_, dayIndex) => (
-                <td
-                  key={dayIndex}
-                  style={{
-                    border: "1px solid #000",
-                    padding: "5px",
-                    cursor: "pointer",
-                    backgroundColor:
-                      selectedIteration === null
-                        ? "transparent"
-                        : selectedIteration ===
-                          timeIndex * daysOfWeek.length + dayIndex
-                        ? "#f8c43a"
-                        : "transparent",
-                  }}
-                  onClick={(e) =>
-                    // handleCellClick(timeIndex * daysOfWeek.length + dayIndex);
-                    // console.log(
-                    //   timeIndex * daysOfWeek.length + dayIndex,
-                    //   timeIndex,
-                    //   dayIndex
-                    // )
-                    order(e.currentTarget)
-                  }
-                >
-                  {/* {generateCellContent(
-                    timeIndex * daysOfWeek.length + dayIndex
-                  )} */}
-                </td>
-              ))}
+              {daysOfWeek.map((_, dayIndex) => {
+                const iteration = timeIndex * daysOfWeek.length + dayIndex;
+                const cellOrders = orders.filter(
+                  (order) => order.time === time && order.day === date[dayIndex]
+                );
+                return (
+                  <td
+                    key={dayIndex}
+                    style={{
+                      border: "1px solid white",
+                      padding: "5px",
+                      cursor: "pointer",
+                      backgroundColor:
+                        selectedIteration === null
+                          ? "transparent"
+                          : selectedIteration === iteration
+                          ? "cyan"
+                          : "transparent",
+                    }}
+                    onClick={(e) => {
+                      const result = window.confirm(
+                        "Do you want to take a time for massage?"
+                      );
+                      if (result) {
+                        const name = prompt("Enter your name...");
+                        handleOrder(time, date[dayIndex], name);
+                      }
+                    }}
+                  >
+                    {cellOrders.map((order) => (
+                      <div key={order.orderId}>{order.user}</div>
+                    ))}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>

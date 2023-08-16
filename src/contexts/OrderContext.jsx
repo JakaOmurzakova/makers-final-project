@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import AuthContext, { useAuthContext } from "../contexts/AuthContext";
-import { BASE_URL } from "../utils/consts";
+import { BASE_URL, ORAPI } from "../utils/consts";
 import { useState } from "react";
 import { useContext } from "react";
 import axios from "axios";
@@ -12,33 +12,31 @@ export function useOrderContext() {
 
 const OrderContext = ({ children }) => {
   const { user } = useAuthContext();
-  const [order, setOrder] = useState(false);
+  const [orders, setOrders] = useState([]);
 
-  async function orderCard() {
+  async function postOrder(newOrder) {
     try {
-      const { data } = await axios.post(`${BASE_URL}/account/services/`);
+      await axios.post(ORAPI, newOrder);
+      getOrders();
     } catch (e) {
       console.log(e);
     }
   }
 
-  async function getOrderCard() {
+  async function getOrders() {
     try {
-      const { data } = await axios.get(`${BASE_URL}/account/services/`);
+      const { data } = await axios(ORAPI);
+      setOrders(data);
     } catch (e) {
       console.log(e);
     }
   }
 
-  async function changeOrderCard() {
-    try {
-      const { data } = await axios.patch(`${BASE_URL}account/services/`);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  const value = { orderCard, getOrderCard, changeOrderCard };
+  const value = {
+    postOrder,
+    getOrders,
+    orders,
+  };
   return (
     <orderContext.Provider value={value}>{children}</orderContext.Provider>
   );
