@@ -11,8 +11,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import "react-date-range/dist/styles.css"; // main css file
 // import "react-date-range/dist/theme/default.css"; // theme css file
 import HotelContext from "./contexts/HotelContext";
+import OrderContext from "./contexts/OrderContext";
 import Toastify from "./components/Toastify";
 import FoodContext from "./contexts/FoodContext";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,8 +23,10 @@ root.render(
       <ServicesContext>
         <FoodContext>
           <HotelContext>
-            <Toastify />
-            <App />
+            <OrderContext>
+             <Toastify />
+             <App />
+            </OrderContext> 
           </HotelContext>
         </FoodContext>
       </ServicesContext>
