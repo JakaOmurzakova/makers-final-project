@@ -1,5 +1,4 @@
 {
-
   "rooms": [
     {
       "title": "luxury room",
@@ -33,8 +32,6 @@
       "id": 1
     }
   ],
-
-
   "services": [
     {
       "img": "https://www.spice.com.tr/public/storage/posts/February2020/5EM1gNHyvJLlcEUZ5MZs.jpg",
@@ -136,7 +133,27 @@
       "time": "13:00",
       "day": "8/17/2023",
       "user": "Osh"
+    },
+    {
+      "titleOrder": "Massages",
+      "time": "9:00",
+      "day": "8/15/2023",
+      "user": "edilbek",
+      "id": "BcEHYIt"
+    },
+    {
+      "titleOrder": "Massages",
+      "time": "10:00",
+      "day": "8/16/2023",
+      "user": "Amaliya",
+      "id": "hOYxX35"
+    },
+    {
+      "titleOrder": "Massages",
+      "time": "15:00",
+      "day": "8/14/2023",
+      "user": "Aboba",
+      "id": "2-xYUzt"
     }
   ]
 }
-
