@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { useHotelContext } from "../../contexts/HotelContext";
 import { useSearchParams } from "react-router-dom";
 import RoomItem from "../../components/hotelrooms/RoomItem";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import RoomFilter from "../../components/hotelrooms/RoomFilter";
+import RoomPagination from "../../components/hotelrooms/RoomPagination";
 
 const CottagePage = () => {
   const { getRooms, rooms } = useHotelContext();
@@ -19,6 +20,9 @@ const CottagePage = () => {
           <RoomItem item={item} key={item.id} />
         ))}
       </Grid>
+      <Box sx={{ width: "max-content", margin: "50px auto" }}>
+        <RoomPagination />
+      </Box>
     </div>
   );
 };

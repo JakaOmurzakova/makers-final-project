@@ -3,8 +3,9 @@ import MenuItem from "../../components/restuarant/MenuItem";
 import { useEffect } from "react";
 import { useFoodContext } from "../../contexts/FoodContext";
 import { useSearchParams } from "react-router-dom";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import MenuFilter from "../../components/restuarant/MenuFilter";
+import MenuPagination from "../../components/restuarant/MenuPagination";
 
 const MenuPage = () => {
   const { dishes, getDishes } = useFoodContext();
@@ -20,6 +21,9 @@ const MenuPage = () => {
           <MenuItem key={item.id} item={item} />
         ))}
       </Grid>
+      <Box sx={{ width: "max-content", margin: "50px auto" }}>
+        <MenuPagination />
+      </Box>
     </div>
   );
 };

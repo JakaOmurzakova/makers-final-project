@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { LIMIT } from "../../utils/consts";
 import { useFoodContext } from "../../contexts/FoodContext";
+import "../../menuStyleCard.css";
 
 const MenuFilter = () => {
   const { setPage } = useFoodContext();

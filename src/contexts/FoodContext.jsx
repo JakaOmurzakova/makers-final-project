@@ -42,12 +42,12 @@ const FoodContext = ({ children }) => {
       const { data, headers } = await $axios.get(
         `${BASE_URL}product/${window.location.search}`
       );
-      //const totalCount = Math.ceil(headers["x-total-count"] / LIMIT);
+      const totalCount = Math.ceil(data.count / LIMIT);
 
-      //dispach({
-      //  type: ACTIONS.totalPages,
-      //  payload: totalCount,
-      //});
+      dispach({
+        type: ACTIONS.totalPages,
+        payload: totalCount,
+      });
 
       dispach({
         type: ACTIONS.dishes,
