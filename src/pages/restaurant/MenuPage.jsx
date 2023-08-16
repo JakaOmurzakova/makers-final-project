@@ -7,6 +7,7 @@ import { Box, Grid } from "@mui/material";
 import MenuFilter from "../../components/restuarant/MenuFilter";
 import MenuPagination from "../../components/restuarant/MenuPagination";
 import MenuLiveSearch from "../../components/restuarant/MenuLiveSearch";
+import Comment from "../../components/Comment";
 
 const MenuPage = () => {
   const { dishes, getDishes } = useFoodContext();
@@ -28,6 +29,7 @@ const MenuPage = () => {
       <Box sx={{ width: "max-content", margin: "50px auto" }}>
         <MenuPagination />
       </Box>
+      <Comment />
     </div>
   );
 };
