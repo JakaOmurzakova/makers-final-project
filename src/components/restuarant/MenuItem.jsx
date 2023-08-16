@@ -12,13 +12,13 @@ const MenuItem = ({ item }) => {
       <div className="card_position">
         <div className="card_size">
           <div className="card_buttons">
-            <button onClick={() => deleteDish(item.id)} class="btn">
+            <button onClick={() => deleteDish(item.id)} className="btn">
               <svg
                 viewBox="0 0 15 17.5"
                 height="17.5"
                 width="15"
                 xmlns="http://www.w3.org/2000/svg"
-                class="icon"
+                className="icon"
               >
                 <path
                   transform="translate(-2.5 -1.25)"
@@ -29,22 +29,22 @@ const MenuItem = ({ item }) => {
             </button>
             <button
               onClick={() => navigate(`/edit-dish/${item.id}`)}
-              class="button"
+              className="button"
             >
               <svg
-                class="svg-icon"
+                className="svg-icon"
                 fill="none"
                 height="24"
                 viewBox="0 0 24 24"
                 width="20"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g stroke="#a649da" stroke-linecap="round" stroke-width="2">
+                <g stroke="#a649da" strokeLinecap="round" strokeWidth="2">
                   <path d="m20 20h-16"></path>
                   <path
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                     d="m14.5858 4.41422c.781-.78105 2.0474-.78105 2.8284 0 .7811.78105.7811 2.04738 0 2.82843l-8.28322 8.28325-3.03046.202.20203-3.0304z"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   ></path>
                 </g>
               </svg>

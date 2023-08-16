@@ -34,6 +34,7 @@ const RoomFilter = () => {
 
   return (
     <ToggleButtonGroup
+      className="filter_text"
       color="primary"
       value={category}
       exclusive

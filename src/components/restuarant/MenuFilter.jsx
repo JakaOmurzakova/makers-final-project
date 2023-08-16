@@ -34,6 +34,7 @@ const MenuFilter = () => {
 
   return (
     <ToggleButtonGroup
+      className="menu_filter_container"
       color="primary"
       value={category}
       exclusive
@@ -41,6 +42,7 @@ const MenuFilter = () => {
       aria-label="Platform"
     >
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 

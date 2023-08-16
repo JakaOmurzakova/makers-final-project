@@ -246,3 +246,9 @@
   justify-content: end !important;
   padding-bottom: 30px !important;
 }
+
+/* ? Room filter */
+
+.filter_hotel {
+  margin: 0 0 50px 10px;
+}
