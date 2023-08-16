@@ -15,7 +15,6 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
-
     <div
       style={{
         marginTop: "100px",
@@ -24,21 +23,21 @@ const MenuPage = () => {
         flexDirection: "column",
       }}
     >
+      <div>
+        <Box>
+          <MenuLiveSearch />
+        </Box>
 
-    <div style={{ marginTop: "100px" }}>
-      <Box>
-        <MenuLiveSearch />
-      </Box>
-
-      <MenuFilter />
-      <Grid container spacing={2} justifyContent="center" gap="25px">
-        {dishes.map((item) => (
-          <MenuItem key={item.id} item={item} />
-        ))}
-      </Grid>
-      <Box sx={{ width: "max-content", margin: "50px auto" }}>
-        <MenuPagination />
-      </Box>
+        <MenuFilter />
+        <Grid container spacing={2} justifyContent="center" gap="25px">
+          {dishes.map((item) => (
+            <MenuItem key={item.id} item={item} />
+          ))}
+        </Grid>
+        <Box sx={{ width: "max-content", margin: "50px auto" }}>
+          <MenuPagination />
+        </Box>
+      </div>
     </div>
   );
 };

@@ -23,7 +23,14 @@ const RoomLiveSearch = () => {
     setPage(1);
   }, [search]);
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "20px",
+        marginTop: "20px",
+      }}
+    >
       <TextField
         value={search}
         onChange={(e) => setSearch(e.target.value)}

@@ -14,31 +14,29 @@ const CottagePage = () => {
     getRooms();
   }, [searchParams]);
   return (
-
     <div
       style={{
-        marginTop: "100px",
         marginBottom: "60px",
         display: "flex",
         flexDirection: "column",
         alignContent: "center",
       }}
     >
+      <div style={{ marginTop: "100px", marginBottom: "60px" }}>
+        <Box>
+          <RoomLiveSearch />
+        </Box>
 
-    <div style={{ marginTop: "100px", marginBottom: "60px" }}>
-      <Box>
-        <RoomLiveSearch />
-      </Box>
-
-      <RoomFilter />
-      <Grid container spacing={2} justifyContent="center" gap="15px">
-        {rooms.map((item) => (
-          <RoomItem item={item} key={item.id} />
-        ))}
-      </Grid>
-      <Box sx={{ width: "max-content", margin: "50px auto" }}>
-        <RoomPagination />
-      </Box>
+        <RoomFilter />
+        <Grid container spacing={2} justifyContent="center" gap="15px">
+          {rooms.map((item) => (
+            <RoomItem item={item} key={item.id} />
+          ))}
+        </Grid>
+        <Box sx={{ width: "max-content", margin: "50px auto" }}>
+          <RoomPagination />
+        </Box>
+      </div>
     </div>
   );
 };
