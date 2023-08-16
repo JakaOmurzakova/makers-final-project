@@ -1,4 +1,40 @@
 {
+
+  "rooms": [
+    {
+      "title": "luxury room",
+      "description": "qwerqewrewr",
+      "category": "vip",
+      "image1": "https://avatars.mds.yandex.net/i?id=006be0767f913174db9a0955cba9606961c72929-10672158-images-thumbs&n=13",
+      "image2": "https://avatars.mds.yandex.net/i?id=006be0767f913174db9a0955cba9606961c72929-10672158-images-thumbs&n=13",
+      "image3": "https://avatars.mds.yandex.net/i?id=006be0767f913174db9a0955cba9606961c72929-10672158-images-thumbs&n=13",
+      "image4": "https://avatars.mds.yandex.net/i?id=006be0767f913174db9a0955cba9606961c72929-10672158-images-thumbs&n=13",
+      "id": 1
+    },
+    {
+      "title": "wqert",
+      "description": "mnogo deneg",
+      "category": "vip",
+      "image1": "https://avatars.mds.yandex.net/i?id=611cdfc7cbf6d78f095f7b4b8cc377fff0488461-8982347-images-thumbs&n=13",
+      "image2": "https://avatars.mds.yandex.net/i?id=611cdfc7cbf6d78f095f7b4b8cc377fff0488461-8982347-images-thumbs&n=13",
+      "image3": "https://avatars.mds.yandex.net/i?id=611cdfc7cbf6d78f095f7b4b8cc377fff0488461-8982347-images-thumbs&n=13",
+      "image4": "https://avatars.mds.yandex.net/i?id=611cdfc7cbf6d78f095f7b4b8cc377fff0488461-8982347-images-thumbs&n=13",
+      "price": "123456",
+      "id": 2
+    }
+  ],
+  "menu": [
+    {
+      "image": "https://avatars.mds.yandex.net/i?id=01372f051234f1d0b8cb82605f6a19c0957ae885-9706270-images-thumbs&n=13",
+      "title": "havka",
+      "description": "havka so vcusom",
+      "price": 123456,
+      "category": "salad",
+      "id": 1
+    }
+  ],
+
+
   "services": [
     {
       "img": "https://www.spice.com.tr/public/storage/posts/February2020/5EM1gNHyvJLlcEUZ5MZs.jpg",
@@ -103,3 +139,4 @@
     }
   ]
 }
+
