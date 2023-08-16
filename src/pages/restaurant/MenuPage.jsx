@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import MenuFilter from "../../components/restuarant/MenuFilter";
 import MenuPagination from "../../components/restuarant/MenuPagination";
+import MenuLiveSearch from "../../components/restuarant/MenuLiveSearch";
 
 const MenuPage = () => {
   const { dishes, getDishes } = useFoodContext();
@@ -14,6 +15,7 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
+
     <div
       style={{
         marginTop: "100px",
@@ -22,6 +24,12 @@ const MenuPage = () => {
         flexDirection: "column",
       }}
     >
+
+    <div style={{ marginTop: "100px" }}>
+      <Box>
+        <MenuLiveSearch />
+      </Box>
+
       <MenuFilter />
       <Grid container spacing={2} justifyContent="center" gap="25px">
         {dishes.map((item) => (

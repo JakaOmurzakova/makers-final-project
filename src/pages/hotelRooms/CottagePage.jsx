@@ -5,6 +5,7 @@ import RoomItem from "../../components/hotelrooms/RoomItem";
 import { Box, Grid } from "@mui/material";
 import RoomFilter from "../../components/hotelrooms/RoomFilter";
 import RoomPagination from "../../components/hotelrooms/RoomPagination";
+import RoomLiveSearch from "../../components/hotelrooms/RoomLiveSearch";
 
 const CottagePage = () => {
   const { getRooms, rooms } = useHotelContext();
@@ -13,6 +14,7 @@ const CottagePage = () => {
     getRooms();
   }, [searchParams]);
   return (
+
     <div
       style={{
         marginTop: "100px",
@@ -22,6 +24,12 @@ const CottagePage = () => {
         alignContent: "center",
       }}
     >
+
+    <div style={{ marginTop: "100px", marginBottom: "60px" }}>
+      <Box>
+        <RoomLiveSearch />
+      </Box>
+
       <RoomFilter />
       <Grid container spacing={2} justifyContent="center" gap="15px">
         {rooms.map((item) => (
