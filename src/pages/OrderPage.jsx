@@ -3,6 +3,7 @@ import { Button, Table } from "react-bootstrap";
 import moment from "moment";
 import { useOrderContext } from "../contexts/OrderContext";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const OrderPage = () => {
   moment.updateLocale("en", { week: { dow: 1 } });
@@ -70,9 +71,25 @@ const OrderPage = () => {
 
   return (
     <div>
+      <div>
+        <h2
+          style={{
+            color: "white",
+            marginTop: "100px",
+            textAlign: "center",
+            fontSize: "50px",
+          }}
+        >
+          Massage
+        </h2>
+      </div>
       <Table
         bordered
-        style={{ marginTop: "100px", backgroundColor: "#0d7e83" }}
+        style={{
+          marginTop: "70px",
+          backgroundColor: "#0d7e83",
+          marginBottom: "70px",
+        }}
       >
         <thead>
           <tr>
@@ -144,6 +161,15 @@ const OrderPage = () => {
           ))}
         </tbody>
       </Table>
+
+      <Link to="/services">
+        <span
+          className="order_info"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          Не работает на мобильных устройствах. Перейдите на Сервисную страницу
+        </span>
+      </Link>
     </div>
   );
 };
