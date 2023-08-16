@@ -944,8 +944,6 @@ span {
   flex-direction: column;
 }
 
-.detailPage_container_carousel {
-}
 .detailPage_container_info {
   margin-top: 50px;
   display: flex;
@@ -966,4 +964,11 @@ span {
 .detailPage_container_info_right {
   width: 50%;
   right: 0;
+}
+
+/* ? Restaraunt Menu Page */
+.menuPage_container {
+  height: 100vh;
+  margin-top: 100px;
+  color: whitesmoke;
 }

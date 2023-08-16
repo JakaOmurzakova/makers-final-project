@@ -1,6 +1,6 @@
 .card-container {
   width: 300px;
-  height: 300px;
+  height: 400px;
   position: relative;
   border-radius: 10px;
 }
@@ -35,7 +35,11 @@
 .card-block .img-content img {
   width: 100%;
   height: 100%;
+
+  object-fit: cover;
+=======
   object-fit: fill;
+
   overflow: hidden;
   fill: #e8e8e8;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -81,4 +85,166 @@
 
 .card-block:hover .img-content img {
   fill: transparent;
+}
+.cottage_card_btn {
+  padding: 8px 12px;
+  gap: 2px;
+  height: 40px;
+  width: 80px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: black !important;
+}
+.cottage_card_btn:hover {
+  transform: scale(1.2);
+}
+.delete_btn {
+  background: red !important;
+}
+.edit_btn {
+  background: green !important;
+}
+.cottage_card_btn_container {
+  display: flex;
+  gap: 40px;
+}
+
+.edit-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.edit-svgIcon {
+  width: 17px;
+  transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+  fill: white;
+}
+
+.edit-button:hover {
+  width: 120px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.edit-button:hover .edit-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.edit-button::before {
+  display: none;
+  content: "Edit";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.edit-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+.detail_btn {
+  color: red !important;
+  font-weight: 700 !important;
+  transition: 0.3s;
+}
+.detail_btn:hover {
+  transform: scale(1.3);
+}
+.content {
+  display: flex !important;
+  gap: 30px !important;
+  justify-content: end !important;
+  padding-bottom: 30px !important;
 }
