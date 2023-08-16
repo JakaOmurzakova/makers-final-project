@@ -16,7 +16,7 @@ const CottagePage = () => {
       container
       spacing={2}
       justifyContent="center"
-      //gap="15px"
+      gap="15px"
     >
       {rooms.map((item) => (
         <RoomItem item={item} key={item.id} />
