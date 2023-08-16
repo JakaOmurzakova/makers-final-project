@@ -34,6 +34,7 @@ const MenuFilter = () => {
 
   return (
     <ToggleButtonGroup
+      className="menu_filter_container"
       color="primary"
       value={category}
       exclusive
@@ -41,6 +42,7 @@ const MenuFilter = () => {
       aria-label="Platform"
     >
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -53,6 +55,7 @@ const MenuFilter = () => {
         All
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -65,6 +68,7 @@ const MenuFilter = () => {
         salad
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -77,6 +81,7 @@ const MenuFilter = () => {
         breakfast
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -88,6 +93,7 @@ const MenuFilter = () => {
         lanch
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
 
@@ -99,6 +105,7 @@ const MenuFilter = () => {
         dinner
       </ToggleButton>
       <ToggleButton
+        className="filter_text"
         sx={{
           border: "none",
           fontWeight: 700,

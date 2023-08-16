@@ -34,6 +34,7 @@ const RoomFilter = () => {
 
   return (
     <ToggleButtonGroup
+      className="filter_hotel"
       color="primary"
       value={category}
       exclusive
@@ -43,9 +44,8 @@ const RoomFilter = () => {
       <ToggleButton
         sx={{
           border: "none",
-
+          className: "room_filter_text",
           fontWeight: 700,
-
           borderRadius: "25px",
         }}
         value="all"
@@ -55,7 +55,7 @@ const RoomFilter = () => {
       <ToggleButton
         sx={{
           border: "none",
-
+          className: "room_filter_text",
           fontWeight: 700,
 
           borderRadius: "50px",
@@ -67,7 +67,7 @@ const RoomFilter = () => {
       <ToggleButton
         sx={{
           border: "none",
-
+          className: "room_filter_text",
           fontWeight: 700,
           borderRadius: "50px",
         }}
@@ -78,7 +78,7 @@ const RoomFilter = () => {
       <ToggleButton
         sx={{
           border: "none",
-
+          className: "room_filter_text",
           fontWeight: 700,
           borderRadius: "50px",
         }}
@@ -91,6 +91,7 @@ const RoomFilter = () => {
           border: "none",
           fontWeight: 700,
           borderRadius: "50px",
+          className: "room_filter_text",
         }}
         value="vip"
       >
