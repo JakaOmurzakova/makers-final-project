@@ -17,6 +17,8 @@ import ProfilePage from "../pages/ProfilePage";
 import MenuPage from "../pages/restaurant/MenuPage";
 import AddProductPage from "../pages/restaurant/AddProductPage";
 import EditProductPage from "../pages/restaurant/EditProductPage";
+import CartPage from "../pages/CartPage";
+import PaymentPage from "../pages/PaymentPage";
 
 const MainRoute = () => {
   return (
@@ -26,6 +28,7 @@ const MainRoute = () => {
         <Route path="/restaurant" element={<RestaurantPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="cottages" element={<CottagePage />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/order" element={<OrderPage />} />
 
         <Route path="/menu" element={<MenuPage />} />
@@ -36,6 +39,7 @@ const MainRoute = () => {
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
         <Route path="/room-detail/:id" element={<HotelDetailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/payment" element={<PaymentPage />} />
       </Route>
       <Route path="/auth" element={<AuthPage />} />
       <Route path="*" element={<NotFoundPage />} />

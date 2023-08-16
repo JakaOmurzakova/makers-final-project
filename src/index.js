@@ -15,6 +15,7 @@ import OrderContext from "./contexts/OrderContext";
 import Toastify from "./components/Toastify";
 import CommentContext from "./contexts/CommentContext";
 import FoodContext from "./contexts/FoodContext";
+import CartContext from "./contexts/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +24,12 @@ root.render(
       <ServicesContext>
         <FoodContext>
           <HotelContext>
+            <CartContext>
+              <OrderContext>
+                <Toastify />
+                <App />
+              </OrderContext>
+            </CartContext>
             <OrderContext>
               <CommentContext>
                 <Toastify />
