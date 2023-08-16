@@ -12,7 +12,7 @@ import { useFoodContext } from "../../contexts/FoodContext";
 const defaultTheme = createTheme();
 
 export default function AddProductPage() {
-  const { addDish } = useFoodContext();
+  const { addDish, categories, getCategories } = useFoodContext();
 
   const [formValue, setFormValue] = useState({
     title: "",
@@ -21,6 +21,10 @@ export default function AddProductPage() {
     image_product: "",
     price: "",
   });
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   function handleChange(e) {
     if (e.target.name === "image") {
@@ -151,11 +155,11 @@ export default function AddProductPage() {
                 label="Category"
                 name="category"
               >
-                <MenuItem value={"salad"}>Salad</MenuItem>
-                <MenuItem value={"breakfast"}>Breakfast</MenuItem>
-                <MenuItem value={"lanch"}>Lanch</MenuItem>
-                <MenuItem value={"dinner"}>Dinner</MenuItem>
-                <MenuItem value={"fruits"}>Fruits</MenuItem>
+                {categories.map((category) => (
+                  <MenuItem key={category.id} value={category.id}>
+                    {category.category}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
 

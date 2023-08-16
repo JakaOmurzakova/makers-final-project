@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useFoodContext } from "../../contexts/FoodContext";
 import { useSearchParams } from "react-router-dom";
 import { Grid } from "@mui/material";
+import MenuFilter from "../../components/restuarant/MenuFilter";
 
 const MenuPage = () => {
   const { dishes, getDishes } = useFoodContext();
@@ -12,8 +13,9 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
-    <div>
-      <Grid container spacing={2} justifyContent="center" gap="15px">
+    <div style={{ marginTop: "100px" }}>
+      <MenuFilter />
+      <Grid container spacing={2} justifyContent="center" gap="25px">
         {dishes.map((item) => (
           <MenuItem key={item.id} item={item} />
         ))}
