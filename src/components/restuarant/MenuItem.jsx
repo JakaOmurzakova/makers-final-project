@@ -48,12 +48,12 @@ const MenuItem = ({ item }) => {
                   ></path>
                 </g>
               </svg>
-              <span class="lable">Edit</span>
+              <span className="lable">Edit</span>
             </button>
           </div>
 
           <div className="card__img">
-            <img src={item.image} />
+            <img src={item.image_product} />
           </div>
           <div className="card__title">{item.title}</div>
           <div className="card__subtitle">{item.description}</div>

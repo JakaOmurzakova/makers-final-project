@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
-import { API_HOTEL, BASE_URL, HOTEL_ACTION } from "../utils/consts";
+import { API_HOTEL, BASE_URL, HOTEL_ACTION, LIMIT } from "../utils/consts";
 import { useSearchParams } from "react-router-dom";
 import $axios from "../utils/axios";
 
@@ -39,7 +39,12 @@ const HotelContext = ({ children }) => {
         `${BASE_URL}hotels/${window.location.search}`
       );
       console.log(data);
-      //const totalCount = Math.ceil()
+      const totalCount = Math.ceil(data.count / LIMIT);
+
+      dispach({
+        type: HOTEL_ACTION.totalPages,
+        payload: totalCount,
+      });
 
       dispach({
         type: HOTEL_ACTION.rooms,

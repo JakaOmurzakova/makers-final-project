@@ -40,18 +40,18 @@ const FoodContext = ({ children }) => {
   async function getDishes() {
     try {
       const { data, headers } = await $axios.get(
-        `${API_MENU}${window.location.search}`
+        `${BASE_URL}product/${window.location.search}`
       );
-      const totalCount = Math.ceil(headers["x-total-count"] / LIMIT);
+      //const totalCount = Math.ceil(headers["x-total-count"] / LIMIT);
 
-      dispach({
-        type: ACTIONS.totalPages,
-        payload: totalCount,
-      });
+      //dispach({
+      //  type: ACTIONS.totalPages,
+      //  payload: totalCount,
+      //});
 
       dispach({
         type: ACTIONS.dishes,
-        payload: data,
+        payload: data.results,
       });
     } catch (error) {
       console.log(error);
@@ -60,10 +60,10 @@ const FoodContext = ({ children }) => {
 
   async function getOneDish(id) {
     try {
-      const { data } = await $axios.get(`${API_MENU}/${id}`);
+      const { data } = await $axios.get(`${BASE_URL}product/${id}`);
       dispach({
         type: ACTIONS.oneDish,
-        payload: data,
+        payload: data.results,
       });
     } catch (error) {
       console.log(error);
@@ -72,7 +72,7 @@ const FoodContext = ({ children }) => {
 
   async function addDish(newDish) {
     try {
-      const { data } = await $axios.post(`${API_MENU}`, newDish);
+      const { data } = await $axios.post(`${BASE_URL}product/`, newDish);
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +80,7 @@ const FoodContext = ({ children }) => {
 
   async function deleteDish(id) {
     try {
-      await $axios.delete(`${API_MENU}/${id}`);
+      await $axios.delete(`${BASE_URL}product/${id}`);
       getDishes();
     } catch (error) {
       console.log(error);
@@ -89,7 +89,7 @@ const FoodContext = ({ children }) => {
 
   async function editDish(id, newData) {
     try {
-      await $axios.patch(`${API_MENU}/${id}`, newData);
+      await $axios.patch(`${BASE_URL}product/${id}`, newData);
     } catch (error) {
       console.log(error);
     }
