@@ -13,10 +13,10 @@ const RoomItem = ({ item }) => {
       <div className="card-container">
         <div className="card-block">
           <div className="img-content">
-            <img src="https://static.tildacdn.com/tild3937-3336-4038-b465-653534623538/8380536.jpg" />
+            <img src={item.results.image1} />
           </div>
           <div className="content">
-            <p className="heading">{item.name}</p>
+            <p className="heading">{item.title}</p>
             <p>{item.description}</p>
             <div>
               <Button onClick={() => navigate(`/room-detail/${id}`)}>

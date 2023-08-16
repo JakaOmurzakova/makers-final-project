@@ -17,6 +17,11 @@ export default function AddRoomPage() {
   const [formValue, setFormValue] = useState({
     title: "",
     description: "",
+    category: "",
+    image1: "",
+    image2: "",
+    image3: "",
+    image4: "",
   });
 
   function handleChange(e) {
@@ -48,6 +53,11 @@ export default function AddRoomPage() {
     setFormValue({
       title: "",
       description: "",
+      category: "",
+      image1: "",
+      image2: "",
+      image3: "",
+      image4: "",
     });
   };
 
@@ -79,7 +89,7 @@ export default function AddRoomPage() {
               label="Title"
               name="title"
               autoFocus
-              value={formValue.name}
+              value={formValue.title}
               onChange={handleChange}
             />
             <TextField
@@ -92,7 +102,7 @@ export default function AddRoomPage() {
               onChange={handleChange}
             />
 
-            {/*<TextField
+            <TextField
               margin="normal"
               required
               fullWidth
@@ -111,33 +121,45 @@ export default function AddRoomPage() {
                 label="Category"
                 name="category"
               >
-                {categories.map((category) => (
-                  <MenuItem key={category.slug} value={category.slug}>
-                    {category.name}
-                  </MenuItem>
-                ))}
+                <MenuItem value={"oneBedroom"}>One Bedroom</MenuItem>
+                <MenuItem value={"twoBedroom"}>Two Bedroom</MenuItem>
+                <MenuItem value={"threeBedroom"}>Three Bedroom</MenuItem>
+                <MenuItem value={"vip"}>VIP</MenuItem>
               </Select>
             </FormControl>
-            <FormControl fullWidth sx={{ mt: 1 }}>
-              <InputLabel>Stock</InputLabel>
-              <Select
-                value={formValue.stock}
-                onChange={handleChange}
-                label="Stock"
-                name="stock"
-              >
-                <MenuItem value="in_stock">In stock</MenuItem>
-                <MenuItem value="out_of_stock">Out of stock</MenuItem>
-              </Select>
-            </FormControl>
+
             <TextField
               margin="normal"
               required
               fullWidth
               type="file"
-              name="image"
+              name="image1"
               onChange={handleChange}
-            />*/}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              type="file"
+              name="image2"
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              type="file"
+              name="image3"
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              type="file"
+              name="image4"
+              onChange={handleChange}
+            />
 
             <Button
               type="submit"

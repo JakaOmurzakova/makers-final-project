@@ -1,96 +1,151 @@
 import React, { useEffect } from "react";
 import { useHotelContext } from "../contexts/HotelContext";
-import { useSearchParams } from "react-router-dom";
+
+import { Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
+
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <div className="homepage_container">
       <div className="homepage_map_container">
         <div className="map_container_description1">
-          <div className="description1">
-            <div className="description1_image"></div>
+          <div onClick={() => navigate("/restaurant")} className="description1">
             <span>Restaraunt</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description2">
           <div className="description2">
-            <div className="description1_image"></div>
+
+            <div className="description2_image"></div>
+
             <span>Conference Hall</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description3">
           <div className="description3">
-            <div className="description1_image"></div>
+
+            <div className="description3_image"></div>
+
             <span>Yacht</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description4">
           <div className="description4">
-            <div className="description1_image"></div>
+
+            <div className="description4_image"></div>
+
             <span>Yacht</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description5">
           <div className="description5">
-            <div className="description1_image"></div>
+
+            <div className="description5_image"></div>
+
             <span>Swimming Pool</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description6">
           <div className="description6">
-            <div className="description1_image"></div>
+
+            <div className="description6_image"></div>
+
             <span>Tennis Court</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description7">
           <div className="description7">
-            <div className="description1_image"></div>
+
+            <div className="description7_image"></div>
+
             <span>GYM</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description8">
           <div className="description8">
-            <div className="description1_image"></div>
+
+            <div className="description8_image"></div>
+
             <span>Aquapark</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description9">
           <div className="description9">
-            <div className="description1_image"></div>
+
+            <div className="description9_image"></div>
+
             <span>Baby concept</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description10">
           <div className="description10">
-            <div className="description1_image"></div>
+
+            <div className="description10_image"></div>
+
             <span>SPA</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description11">
           <div className="description11">
-            <div className="description1_image"></div>
+
+            <div className="description11_image"></div>
+
             <span>Golf</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
         <div className="map_container_description12">
-          <div className="description12">
-            <div className="description1_image"></div>
+          <div onClick={() => navigate("/cottages")} className="description12">
+
+            <div className="description12_image"></div>
+
             <span>Cottages</span>
-            <span>wqyiegfiewhu</span>
           </div>
         </div>
       </div>
 
+      <div className="homepage_crud-container">
+        <div className="homepage_crud-container_item">
+          <img
+            src="https://c4.wallpaperflare.com/wallpaper/527/403/663/maldives-resort-sea-madives-paradise-wallpaper-preview.jpg"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+        <div className="homepage_crud-container_item ">
+          <img
+            src="https://www.tourism-of-india.com/blog/wp-content/uploads/2022/01/Six-Senses-Laamu.jpg"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+        <div className="homepage_crud-container_item blur2">
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220707113925-17-maldives-best-overwater-villas-velaa.jpg?c=original&q=w_1280,c_fill"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+        <div className="homepage_crud-container_item blur3">
+          <img
+            src="https://ik.imgkit.net/3vlqs5axxjf/TAW/uploadedImages/All_Gateways/ASPAC/Hotel_Review/FourSeasonsMaldives_Hero.jpg?tr=w-1200%2Cfo-auto"
+            alt=""
+          />
+          <h2>2 bedroom</h2>
+          <h5>179$ / day</h5>
+          <h6>Bathroom, kitchen, TV section...</h6>
+        </div>
+      </div>
+      <Link to="/cottages" className="homepage_crud-container_item_span">
+        View More&#8680;
+      </Link>
       <div className="homepage_card_container">
         <h2 className="homepage_text">THE BEST HOTEL FOR YOU</h2>
         <div className="homepage_content_container">
@@ -133,7 +188,6 @@ const HomePage = () => {
             />
           </div>
           <span>
-            {" "}
             Discover Tranquility: Immerse yourself in the soothing sounds of
             waves and gentle ocean breezes. Our strategically designed rooms
             provide stunning panoramic views of the sparkling turquoise waters

@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
   font-family: "Quicksand", sans-serif;
   background-color: #192734 !important;
 }
@@ -16,17 +14,26 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  padding: 30px 0;
 }
 .navbar_logo__menu_photo {
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
+.profile_container {
+  background-color: #15202b;
+  max-height: 100%;
+  color: whitesmoke;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
 /* ? Footer */
 .footer_container {
   width: 100%;
-  height: 250px;
+  height: 230px;
   background-color: #15202b;
   color: whitesmoke;
   left: 0;
@@ -50,6 +57,14 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  margin-top: 20px;
+}
+.footer_container_block2__social-networks_sub_container img {
+  width: 50px;
+  transition: 0.3s;
+}
+.footer_container_block2__social-networks_sub_container img:hover {
+  transform: scale(1.3);
 }
 .footer_container_block1__navigation,
 .footer_container_block2__social-networks,
@@ -91,8 +106,14 @@ span {
 }
 @media screen and (max-width: 582px) {
   .footer_container {
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 50px;
   }
+
   span {
     font-size: 18px;
   }
@@ -104,9 +125,6 @@ span {
   }
 }
 @media screen and (max-width: 377px) {
-  .footer_container {
-    height: 600px;
-  }
   span {
     font-size: 18px;
   }
@@ -144,6 +162,7 @@ span {
 /* ? Map item restaraunt */
 .homepage_map_container {
   position: relative;
+  transition: 0.3s;
 }
 .map_container_description1 {
   position: absolute;
@@ -151,6 +170,7 @@ span {
   height: 100px;
   left: 150px;
   top: 200px;
+  transition: 1s;
 }
 
 .description1 {
@@ -159,6 +179,8 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  cursor: pointer;
+  color: white;
 }
 
 .map_container_description1:hover .description1 {
@@ -166,14 +188,101 @@ span {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: all 0.6s;
+  transition: 0.3s;
 }
 
 .description1_image {
   width: 100px;
   height: 100px;
-
-  background-image: url(https://png.pngtree.com/element_our/20200609/ourlarge/pngtree-restaurant-shop-image_2224376.jpg);
+  background-image: url(../src/assets/map/ресторан.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description2_image {
+  width: 150px;
+  height: 100px;
+  background-image: url(../src/assets/map/conference\ hall.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description3_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/yacht.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description4_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/yacht.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description5_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/swimming_pool.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description6_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/tennis.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description7_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/gym.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description8_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/aquapark.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description9_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/baby_concept.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description10_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/spa.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description11_image {
+  width: 150px;
+  height: 110px;
+  background-image: url(../src/assets/map/golf.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.description12_image {
+  width: 100px;
+  height: 100px;
+  background-image: url(../src/assets/map/cottages.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -194,6 +303,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description2:hover .description2 {
@@ -219,6 +329,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description3:hover .description3 {
@@ -245,6 +356,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description4:hover .description4 {
@@ -269,6 +381,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description5:hover .description5 {
@@ -294,6 +407,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 
 .map_container_description6:hover .description6 {
@@ -318,6 +432,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description7:hover .description7 {
   display: flex;
@@ -341,6 +456,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description8:hover .description8 {
   display: flex;
@@ -364,6 +480,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description9:hover .description9 {
   display: flex;
@@ -387,6 +504,7 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description10:hover .description10 {
   display: flex;
@@ -413,6 +531,7 @@ span {
   right: 10px;
   display: none;
   border-radius: 10px;
+  color: white;
 }
 .map_container_description11:hover .description11 {
   display: flex;
@@ -438,6 +557,8 @@ span {
   height: 170px;
   display: none;
   border-radius: 10px;
+  cursor: pointer;
+  color: white;
 }
 .map_container_description12:hover .description12 {
   display: flex;
@@ -450,6 +571,57 @@ span {
   .homepage_map_container {
     display: none;
   }
+}
+
+/* ? HomaPage mini CRUD container */
+.homepage_crud-container {
+  margin-top: 100px;
+  width: 80%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  color: whitesmoke;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+.homepage_crud-container_item {
+  width: 290px;
+  height: 354px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(16, 96, 102), -15px -15px 30px rgb(16, 96, 102);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+.homepage_crud-container_item:hover {
+  transform: scale(1.15);
+}
+.homepage_crud-container_item img {
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+.blur2 {
+  filter: blur(0.1rem);
+}
+.blur3 {
+  filter: blur(0.3rem);
+}
+.homepage_crud-container_item_span {
+  font-size: 4vh;
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+.homepage_crud-container_item_span:hover {
+  transform: scale(1.1);
 }
 
 /* ? HomePage edits */
@@ -709,4 +881,88 @@ span {
   width: 800px;
   text-align: center;
   font-size: 22px;
+}
+
+/* ? Authpage */
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  color: whitesmoke !important;
+}
+.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root {
+  color: whitesmoke !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:invalid {
+  color: whitesmoke !important;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color: whitesmoke !important;
+}
+
+.navbar_profile_sign_out {
+  font-size: 16px !important;
+  margin-bottom: 10px !important;
+  transition: 0.3s !important;
+}
+.navbar_profile_sign_out:hover {
+  transform: scale(1.3);
+}
+
+.navbar_link {
+  text-decoration: none;
+  color: whitesmoke;
+  transition: 0.3s;
+}
+.navbar_link:hover {
+  transform: scale(1.3);
+}
+
+.footer_container_block1__navigation_item_sub {
+  font-size: 18px;
+  transition: 0.3s;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.footer_container_block1__navigation_item_sub:hover {
+  transform: scale(1.3);
+}
+
+.navbar_items {
+  transition: 0.2s !important;
+}
+.navbar_items:hover {
+  transform: scale(1.1);
+}
+
+/* ? DetailPage */
+
+.detailPage_container {
+  margin-top: 100px;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+.detailPage_container_carousel {
+}
+.detailPage_container_info {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  color: #ffffff;
+}
+.detailPage_container_carousel {
+  width: 90vw;
+}
+.detailPage_container_info_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.detailPage_container_info_right {
+  width: 50%;
+  right: 0;
 }

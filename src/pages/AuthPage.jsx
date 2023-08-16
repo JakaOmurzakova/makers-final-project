@@ -19,23 +19,6 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useAuthContext } from "../contexts/AuthContext";
 
-//function Copyright(props) {
-//  return (
-//    <Typography
-//      variant="body2"
-//      color="text.secondary"
-//      align="center"
-//      {...props}
-//    >
-//      {"Copyright © "}
-//      <Link color="inherit" href="https://mui.com/">
-//        Your Website
-//      </Link>
-//      {new Date().getFullYear()}
-//    </Typography>
-//  );
-//}
-
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
@@ -65,7 +48,7 @@ export default function AuthPage() {
   }
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" sx={{ color: "white" }}>
         <CssBaseline />
         <Box
           sx={{
@@ -88,31 +71,50 @@ export default function AuthPage() {
             sx={{ mt: 1 }}
           >
             {!isLogin && (
-              <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
-                gap={5}
-              >
+              <Box sx={{ color: "white" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: "15px",
+                  }}
+                >
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="First name"
+                    name="first_name"
+                    autoFocus
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="Last name"
+                    name="last_name"
+                  />
+                </Box>
+
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  label="First name"
-                  name="first_name"
-                  autoFocus
+                  label="User Name"
+                  name="username"
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  label="Last name"
-                  name="last_name"
+                  type="file"
+                  name="avatar"
                 />
               </Box>
             )}
 
             <TextField
+              className="wewe"
               margin="normal"
               required
               fullWidth
@@ -162,7 +164,13 @@ export default function AuthPage() {
               {isLogin ? "Sign in" : "Sign up"}
             </Button>
             <Grid container>
-              <Grid item xs></Grid>
+              <Grid item xs>
+                {isLogin && (
+                  <Link href="#" variant="body2">
+                    Change password
+                  </Link>
+                )}
+              </Grid>
               <Grid item>
                 <Link
                   onClick={() => setIsLogin(!isLogin)}
@@ -177,7 +185,6 @@ export default function AuthPage() {
             </Grid>
           </Box>
         </Box>
-        {/*<Copyright sx={{ mt: 8, mb: 4 }} />*/}
       </Container>
     </ThemeProvider>
   );
