@@ -16,7 +16,7 @@ export default function AddProductPage() {
 
   const [formValue, setFormValue] = useState({
     title: "",
-    description: "",
+
     category: "",
     image_product: "",
     price: "",
@@ -45,12 +45,7 @@ export default function AddProductPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      !formValue.title.trim() ||
-      !formValue.description.trim() ||
-      !formValue.price ||
-      !formValue.category
-    ) {
+    if (!formValue.title.trim() || !formValue.price || !formValue.category) {
       return;
     }
 
@@ -63,7 +58,6 @@ export default function AddProductPage() {
 
     setFormValue({
       title: "",
-      description: "",
       category: "",
       image_product: "",
       price: "",
@@ -99,15 +93,6 @@ export default function AddProductPage() {
               name="title"
               autoFocus
               value={formValue.title}
-              onChange={handleChange}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="description"
-              label="Description"
-              value={formValue.description}
               onChange={handleChange}
             />
 

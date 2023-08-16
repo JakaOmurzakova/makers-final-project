@@ -34,7 +34,7 @@ const MainRoute = () => {
 
         <Route path="/add-room" element={<AddRoomPage />} />
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
-        <Route path="/room-detail" element={<HotelDetailPage />} />
+        <Route path="/room-detail/:id" element={<HotelDetailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Route>
       <Route path="/auth" element={<AuthPage />} />

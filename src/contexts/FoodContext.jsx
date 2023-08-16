@@ -97,10 +97,10 @@ const FoodContext = ({ children }) => {
 
   async function getCategories() {
     try {
-      const { data } = await $axios.get(`${BASE_URL}category_restaurant/`);
+      const { data } = await $axios.get(`${BASE_URL}category_restourant/`);
       dispach({
         type: ACTIONS.categories,
-        payload: data,
+        payload: data.results,
       });
     } catch (error) {
       console.log(error);

@@ -21,39 +21,44 @@ export default function EditRoomPage() {
     title: "",
     description: "",
     category: "",
-    image1: "",
-    image2: "",
-    image3: "",
-    image4: "",
     price: "",
   });
+  useEffect(() => {
+    getOneRoom(id);
+  }, []);
+
+  useEffect(() => {
+    if (oneRoom) {
+      setFormValue({ ...oneRoom, image: "" });
+    }
+  }, [oneRoom]);
+
+  useEffect(() => {
+    getOneRoom(id);
+  }, []);
   //? Связка с бэком
-  //function handleChange(e) {
-  //  if (e.target.name === "image") {
-  //    setFormValue({
-  //      ...formValue,
-  //      image: e.target.files[0],
-  //    });
-  //  } else {
-  //    setFormValue({
-  //      ...formValue,
-  //      [e.target.name]: e.target.value,
-  //    });
-  //  }
-  //}
   function handleChange(e) {
-    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+    if (e.target.name === "image") {
+      setFormValue({
+        ...formValue,
+        image: e.target.files[0],
+      });
+    } else {
+      setFormValue({
+        ...formValue,
+        [e.target.name]: e.target.value,
+      });
+    }
   }
+  //function handleChange(e) {
+  //  setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  //}
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
       !formValue.title.trim() ||
       !formValue.description.trim() ||
-      !formValue.image1.trim() ||
-      !formValue.image2.trim() ||
-      !formValue.image3.trim() ||
-      !formValue.image4.trim() ||
       !formValue.price
     ) {
       return;
@@ -61,10 +66,15 @@ export default function EditRoomPage() {
 
     console.log(formValue);
 
-    //const data = new FormData(event.currentTarget);
+    const data = new FormData(event.currentTarget);
 
-    //addRoom(data);
-    editRoom(id, formValue);
+    if (!formValue) {
+      data.delete("image");
+      editRoom(id, data);
+    } else {
+      editRoom(id, data);
+    }
+    //editRoom(id, formValue);
     navigate("/cottages");
   };
 
@@ -125,9 +135,9 @@ export default function EditRoomPage() {
               required
               fullWidth
               name="image1"
-              //type="file"
-              label="Image1"
-              value={formValue.image1}
+              type="file"
+              //label="Image1"
+              //value={formValue.image1}
               onChange={handleChange}
             />
             <TextField
@@ -135,9 +145,9 @@ export default function EditRoomPage() {
               required
               fullWidth
               name="image2"
-              //type="file"
-              label="Image2"
-              value={formValue.image2}
+              type="file"
+              //label="Image2"
+              //value={formValue.image2}
               onChange={handleChange}
             />
             <TextField
@@ -145,9 +155,9 @@ export default function EditRoomPage() {
               required
               fullWidth
               name="image3"
-              //type="file"
-              label="Image3"
-              value={formValue.image3}
+              type="file"
+              //label="Image3"
+              //value={formValue.image3}
               onChange={handleChange}
             />
             <TextField
@@ -155,9 +165,9 @@ export default function EditRoomPage() {
               required
               fullWidth
               name="image4"
-              //type="file"
-              label="Image4"
-              value={formValue.image4}
+              type="file"
+              //label="Image4"
+              //value={formValue.image4}
               onChange={handleChange}
             />
             <FormControl fullWidth>
