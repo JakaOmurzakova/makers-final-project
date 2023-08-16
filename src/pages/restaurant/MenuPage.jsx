@@ -7,12 +7,15 @@ import { Box, Grid } from "@mui/material";
 import MenuFilter from "../../components/restuarant/MenuFilter";
 import MenuPagination from "../../components/restuarant/MenuPagination";
 import MenuLiveSearch from "../../components/restuarant/MenuLiveSearch";
-
 import Comment from "../../components/Comment";
 
 const MenuPage = () => {
+  const { dishes, getDishes } = useFoodContext();
+  const [searchParams] = useSearchParams();
+  useEffect(() => {
+    getDishes();
+  }, [searchParams]);
   return (
-
     <div style={{ marginTop: "100px" }}>
       <Box>
         <MenuLiveSearch />
