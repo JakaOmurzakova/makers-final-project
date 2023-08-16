@@ -312,6 +312,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description2:hover .description2 {
@@ -338,6 +339,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description3:hover .description3 {
@@ -365,6 +367,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description4:hover .description4 {
@@ -390,6 +393,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description5:hover .description5 {
@@ -416,6 +420,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .map_container_description6:hover .description6 {
@@ -441,6 +446,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description7:hover .description7 {
   display: flex;
@@ -465,6 +471,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description8:hover .description8 {
   display: flex;
@@ -489,6 +496,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description9:hover .description9 {
   display: flex;
@@ -513,6 +521,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description10:hover .description10 {
   display: flex;
@@ -540,6 +549,7 @@ span {
   display: none;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 .map_container_description11:hover .description11 {
   display: flex;
