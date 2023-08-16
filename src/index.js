@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import "react-date-range/dist/styles.css"; // main css file
 // import "react-date-range/dist/theme/default.css"; // theme css file
 import HotelContext from "./contexts/HotelContext";
+import OrderContext from "./contexts/OrderContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
     <AuthContext>
       <ServicesContext>
         <HotelContext>
-          <App />
+          <OrderContext>
+            <App />
+          </OrderContext>
         </HotelContext>
       </ServicesContext>
     </AuthContext>

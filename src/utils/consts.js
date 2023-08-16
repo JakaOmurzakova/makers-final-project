@@ -1,5 +1,6 @@
 export const API = "http://localhost:8000/services";
-export const BASE_URL = "http://16.170.205.114/docs";
+export const ORAPI = "http://localhost:8000/orders";
+export const BASE_URL = "http://16.170.205.114";
 
 export const LIMIT = 4;
 
