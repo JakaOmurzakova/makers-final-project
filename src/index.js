@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HotelContext from "./contexts/HotelContext";
 import OrderContext from "./contexts/OrderContext";
 import Toastify from "./components/Toastify";
-
+import CommentContext from "./contexts/CommentContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,9 +22,11 @@ root.render(
       <ServicesContext>
         <HotelContext>
           <OrderContext>
-            <Toastify />
-            <App />
-          </OrderContext>       
+            <CommentContext>
+              <Toastify />
+              <App />
+            </CommentContext>
+          </OrderContext>
         </HotelContext>
       </ServicesContext>
     </AuthContext>
