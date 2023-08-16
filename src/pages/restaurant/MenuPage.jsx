@@ -14,7 +14,14 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div
+      style={{
+        marginTop: "100px",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
       <MenuFilter />
       <Grid container spacing={2} justifyContent="center" gap="25px">
         {dishes.map((item) => (

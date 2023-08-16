@@ -13,7 +13,15 @@ const CottagePage = () => {
     getRooms();
   }, [searchParams]);
   return (
-    <div style={{ marginTop: "100px", marginBottom: "60px" }}>
+    <div
+      style={{
+        marginTop: "100px",
+        marginBottom: "60px",
+        display: "flex",
+        flexDirection: "column",
+        alignContent: "center",
+      }}
+    >
       <RoomFilter />
       <Grid container spacing={2} justifyContent="center" gap="15px">
         {rooms.map((item) => (
