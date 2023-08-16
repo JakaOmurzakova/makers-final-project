@@ -6,10 +6,10 @@ import { useAuthContext } from "../contexts/AuthContext";
 const ActivationPage = () => {
   const [searchParams] = useSearchParams();
   const { activateUser } = useAuthContext();
-  console.log(searchParams.get("u"));
+  console.log(searchParams.get("token"));
 
   useEffect(() => {
-    activateUser(searchParams.get("u"));
+    activateUser(searchParams.get("token"));
   }, []);
 
   return (

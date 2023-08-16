@@ -1,11 +1,14 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
-import { ACTIONS } from "../utils/consts";
+import { ACTIONS, API_MENU, BASE_URL, LIMIT } from "../utils/consts";
 import { useSearchParams } from "react-router-dom";
 import $axios from "../utils/axios";
+import axios from "axios";
 
 const foodContext = createContext();
 
-export const useFoodContext = () => useContext(foodContext);
+export function useFoodContext() {
+  return useContext(foodContext);
+}
 
 const initState = {
   dishes: [],
@@ -36,8 +39,8 @@ const FoodContext = ({ children }) => {
 
   async function getDishes() {
     try {
-      const { data } = await $axios.get(
-        `${BASE_URL}/dishes/${window.location.search}`
+      const { data, headers } = await $axios.get(
+        `${BASE_URL}product/${window.location.search}`
       );
       const totalCount = Math.ceil(data.count / LIMIT);
 
@@ -57,10 +60,10 @@ const FoodContext = ({ children }) => {
 
   async function getOneDish(id) {
     try {
-      const { data } = await $axios.get(`${BASE_URL}/account/product/${id}`);
+      const { data } = await $axios.get(`${BASE_URL}product/${id}`);
       dispach({
         type: ACTIONS.oneDish,
-        payload: data,
+        payload: data.results,
       });
     } catch (error) {
       console.log(error);
@@ -69,10 +72,7 @@ const FoodContext = ({ children }) => {
 
   async function addDish(newDish) {
     try {
-      const { data } = await $axios.post(
-        `${BASE_URL}/account/product/`,
-        newDish
-      );
+      const { data } = await $axios.post(`${BASE_URL}product/`, newDish);
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +80,7 @@ const FoodContext = ({ children }) => {
 
   async function deleteDish(id) {
     try {
-      await $axios.delete(`${BASE_URL}/account/product/${id}/`);
+      await $axios.delete(`${BASE_URL}product/${id}`);
       getDishes();
     } catch (error) {
       console.log(error);
@@ -89,7 +89,7 @@ const FoodContext = ({ children }) => {
 
   async function editDish(id, newData) {
     try {
-      await $axios.patch(`${BASE_URL}/account/product/${id}/`, newData);
+      await $axios.patch(`${BASE_URL}product/${id}`, newData);
     } catch (error) {
       console.log(error);
     }
@@ -97,9 +97,7 @@ const FoodContext = ({ children }) => {
 
   async function getCategories() {
     try {
-      const { data } = await $axios.get(
-        `${BASE_URL}/account/category_restaurant/`
-      );
+      const { data } = await $axios.get(`${BASE_URL}category_restaurant/`);
       dispach({
         type: ACTIONS.categories,
         payload: data,

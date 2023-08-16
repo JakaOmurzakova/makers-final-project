@@ -14,6 +14,8 @@ import HotelContext from "./contexts/HotelContext";
 import OrderContext from "./contexts/OrderContext";
 import Toastify from "./components/Toastify";
 import CommentContext from "./contexts/CommentContext";
+import FoodContext from "./contexts/FoodContext";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
