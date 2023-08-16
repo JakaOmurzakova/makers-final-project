@@ -1,11 +1,14 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
-import { ACTIONS } from "../utils/consts";
+import { ACTIONS, API_MENU, BASE_URL, LIMIT } from "../utils/consts";
 import { useSearchParams } from "react-router-dom";
 import $axios from "../utils/axios";
+import axios from "axios";
 
 const foodContext = createContext();
 
-export const useFoodContext = () => useContext(foodContext);
+export function useFoodContext() {
+  return useContext(foodContext);
+}
 
 const initState = {
   dishes: [],
@@ -36,10 +39,10 @@ const FoodContext = ({ children }) => {
 
   async function getDishes() {
     try {
-      const { data } = await $axios.get(
-        `${BASE_URL}/dishes/${window.location.search}`
+      const { data, headers } = await $axios.get(
+        `${API_MENU}${window.location.search}`
       );
-      const totalCount = Math.ceil(data.count / LIMIT);
+      const totalCount = Math.ceil(headers["x-total-count"] / LIMIT);
 
       dispach({
         type: ACTIONS.totalPages,
@@ -48,7 +51,7 @@ const FoodContext = ({ children }) => {
 
       dispach({
         type: ACTIONS.dishes,
-        payload: data.results,
+        payload: data,
       });
     } catch (error) {
       console.log(error);
@@ -57,7 +60,7 @@ const FoodContext = ({ children }) => {
 
   async function getOneDish(id) {
     try {
-      const { data } = await $axios.get(`${BASE_URL}/account/product/${id}`);
+      const { data } = await $axios.get(`${API_MENU}/${id}`);
       dispach({
         type: ACTIONS.oneDish,
         payload: data,
@@ -69,10 +72,7 @@ const FoodContext = ({ children }) => {
 
   async function addDish(newDish) {
     try {
-      const { data } = await $axios.post(
-        `${BASE_URL}/account/product/`,
-        newDish
-      );
+      const { data } = await $axios.post(`${API_MENU}`, newDish);
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +80,7 @@ const FoodContext = ({ children }) => {
 
   async function deleteDish(id) {
     try {
-      await $axios.delete(`${BASE_URL}/account/product/${id}/`);
+      await $axios.delete(`${API_MENU}/${id}`);
       getDishes();
     } catch (error) {
       console.log(error);
@@ -89,7 +89,7 @@ const FoodContext = ({ children }) => {
 
   async function editDish(id, newData) {
     try {
-      await $axios.patch(`${BASE_URL}/account/product/${id}/`, newData);
+      await $axios.patch(`${API_MENU}/${id}`, newData);
     } catch (error) {
       console.log(error);
     }
@@ -97,9 +97,7 @@ const FoodContext = ({ children }) => {
 
   async function getCategories() {
     try {
-      const { data } = await $axios.get(
-        `${BASE_URL}/account/category_restaurant/`
-      );
+      const { data } = await $axios.get(`${BASE_URL}category_restaurant/`);
       dispach({
         type: ACTIONS.categories,
         payload: data,
