@@ -237,7 +237,6 @@ function Navbar() {
                   }}
                 >
                   <NavLink className="navbar_link">Food Cart</NavLink>
-
                   {!user ? (
                     <Button
                       component={Link}

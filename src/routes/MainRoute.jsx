@@ -17,8 +17,13 @@ import HotelDetailPage from "../pages/hotelRooms/HotelDetailPage";
 import MenuPage from "../pages/restaurant/MenuPage";
 import AddProductPage from "../pages/restaurant/AddProductPage";
 import EditProductPage from "../pages/restaurant/EditProductPage";
+
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import EmailSendPage from "../pages/EmailSendPage";
+
+import CartPage from "../pages/CartPage";
+import PaymentPage from "../pages/PaymentPage";
+
 
 const MainRoute = () => {
   return (
@@ -28,6 +33,7 @@ const MainRoute = () => {
         <Route path="/restaurant" element={<RestaurantPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="cottages" element={<CottagePage />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/order" element={<OrderPage />} />
 
         <Route path="/menu" element={<MenuPage />} />
@@ -37,7 +43,11 @@ const MainRoute = () => {
         <Route path="/add-room" element={<AddRoomPage />} />
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
         <Route path="/room-detail/:id" element={<HotelDetailPage />} />
+
         {/*<Route path="/profile" element={<ProfilePage />} />*/}
+        
+        <Route path="/payment" element={<PaymentPage />} />
+
       </Route>
       <Route
         path="/api/account/reset-password/confirm/"

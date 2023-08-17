@@ -15,20 +15,23 @@ import OrderContext from "./contexts/OrderContext";
 import Toastify from "./components/Toastify";
 import CommentContext from "./contexts/CommentContext";
 import FoodContext from "./contexts/FoodContext";
+import CartContext from "./contexts/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+   <BrowserRouter>
     <AuthContext>
       <ServicesContext>
         <FoodContext>
           <HotelContext>
-            <OrderContext>
+            <CartContext>
               <CommentContext>
-                <Toastify />
-                <App />
+                <OrderContext>
+                  <Toastify />
+                  <App />
+                </OrderContext>
               </CommentContext>
-            </OrderContext>
+            </CartContext>
           </HotelContext>
         </FoodContext>
       </ServicesContext>
