@@ -39,7 +39,7 @@ export default function BasicRating() {
         name="simple-controlled"
         value={value}
         onChange={(event, newValue) => {
-          addRating(newValue);
+          setValue(newValue);
         }}
       />
     </Box>
