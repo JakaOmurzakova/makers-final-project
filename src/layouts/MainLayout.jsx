@@ -2,8 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
-import Calendar from "../components/Calendar";
-import Calendeer from "../components/Calendeer";
 
 const MainLayout = () => {
   return (
@@ -18,8 +16,6 @@ const MainLayout = () => {
       <Navbar />
       <Outlet />
       <Footer />
-      {/*<Calendar />
-      <Calendeer />*/}
     </div>
   );
 };

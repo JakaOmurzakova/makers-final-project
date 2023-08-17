@@ -76,13 +76,14 @@ const ServicesPage = () => {
       <Container className="services_container">
         {filteredServices.map((item) => (
           <Box key={item.id} sx={{ margin: "50px", display: "flex" }}>
-            <ImageList variant="standard" cols={3} gap={8}>
+            <ImageList
+              variant="standard"
+              cols={1}
+              gap={8}
+              className="service_img"
+            >
               <ImageListItem>
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  style={{ width: "450px", maxWidth: "none" }}
-                />
+                <img src={item.img} alt={item.title} />
               </ImageListItem>
             </ImageList>
             <Box
