@@ -236,13 +236,7 @@ function Navbar() {
                     paddngBottom: "50px",
                   }}
                 >
-                  <NavLink className="navbar_link" to="/profile">
-                    Profile
-                  </NavLink>
-                  <NavLink className="navbar_link" to="/cart">
-                    Food Cart
-                  </NavLink>
-                  <NavLink className="navbar_link">Seleted</NavLink>
+                  <NavLink className="navbar_link">Food Cart</NavLink>
                   {!user ? (
                     <Button
                       component={Link}

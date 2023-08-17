@@ -8,6 +8,7 @@ import MenuFilter from "../../components/restuarant/MenuFilter";
 import MenuPagination from "../../components/restuarant/MenuPagination";
 import MenuLiveSearch from "../../components/restuarant/MenuLiveSearch";
 import Comment from "../../components/Comment";
+import "../../menuStyleCard.css";
 
 const MenuPage = () => {
   const { dishes, getDishes } = useFoodContext();
@@ -16,7 +17,7 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div className="menuPage_container" style={{ marginTop: "100px" }}>
       <Box>
         <MenuLiveSearch />
       </Box>
@@ -26,7 +27,9 @@ const MenuPage = () => {
           <MenuItem key={item.id} item={item} />
         ))}
       </Grid>
-      <Box sx={{ width: "max-content", margin: "50px auto" }}>
+      <Box
+        sx={{ margin: "100px 0", display: "flex", justifyContent: "center" }}
+      >
         <MenuPagination />
       </Box>
       <Comment />

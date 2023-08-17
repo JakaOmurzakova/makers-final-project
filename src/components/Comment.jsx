@@ -2,11 +2,12 @@ import { Box, Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useCommentContext } from "../contexts/CommentContext";
 import { useAuthContext } from "../contexts/AuthContext";
+import "../menuStyleCard.css";
 
 const Comment = () => {
   const { comments, getComments, addComment } = useCommentContext();
   const [inputValue, setInputValue] = useState("");
-  const user = "Luka";
+  const { user } = useAuthContext();
 
   useEffect(() => {
     getComments();
@@ -29,6 +30,7 @@ const Comment = () => {
 
   return (
     <div
+      className="comments_container"
       style={{
         color: "white",
         display: "flex",
@@ -36,15 +38,14 @@ const Comment = () => {
         justifyContent: "center",
       }}
     >
-      <div>
+      <div className="comments_container">
         <form onSubmit={handleSubmit}>
           <Box
             sx={{
-              width: 500,
+              width: 300,
               maxWidth: "100%",
             }}
           >
-            <>{user}</>
             <TextField
               fullWidth
               label="Your comment"

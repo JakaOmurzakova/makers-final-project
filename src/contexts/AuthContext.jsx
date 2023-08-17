@@ -25,12 +25,12 @@ const AuthContext = ({ children }) => {
   async function login(credentials) {
     try {
       const { data: tokens } = await axios.post(
-        `${BASE_URL}login/`,
+        `${BASE_URL}/login/`,
         credentials
       );
       localStorage.setItem("tokens", JSON.stringify(tokens));
 
-      const { data } = await $axios.get(`${BASE_URL}users/profile/`);
+      const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
 
       setUser(data);
     } catch (error) {
@@ -47,7 +47,7 @@ const AuthContext = ({ children }) => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));
       if (tokens) {
-        const { data } = await $axios.get(`${BASE_URL}users/profile/`);
+        const { data } = await $axios.get(`${BASE_URL}/users/profile/`);
 
         setUser(data);
       } else {
@@ -60,10 +60,30 @@ const AuthContext = ({ children }) => {
 
   async function activateUser(code) {
     try {
-      await $axios.post(`${BASE_URL}email-verify/`, { code });
+      await $axios.post(`${BASE_URL}/email-verify/`, { code });
       navigate("/");
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  async function resetPassword(credentials) {
+    try {
+      await axios.post(`${BASE_URL}/reset-password/`, credentials);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function confirmResetPassword(credentials, code) {
+    try {
+      await axios.post(
+        `${BASE_URL}/reset-password/confirm/?c=${code}`,
+        credentials
+      );
+      navigate("/auth");
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -74,6 +94,8 @@ const AuthContext = ({ children }) => {
     logout,
     checkAuth,
     activateUser,
+    confirmResetPassword,
+    resetPassword,
   };
   return <authContext.Provider value={value}>{children}</authContext.Provider>;
 };
