@@ -27,7 +27,9 @@ const MenuPage = () => {
           <MenuItem key={item.id} item={item} />
         ))}
       </Grid>
-      <Box sx={{ width: "max-content", margin: "50px auto" }}>
+      <Box
+        sx={{ margin: "100px 0", display: "flex", justifyContent: "center" }}
+      >
         <MenuPagination />
       </Box>
       <Comment />

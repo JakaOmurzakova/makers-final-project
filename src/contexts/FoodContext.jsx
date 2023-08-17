@@ -40,7 +40,7 @@ const FoodContext = ({ children }) => {
   async function getDishes() {
     try {
       const { data, headers } = await $axios.get(
-        `${BASE_URL}product/${window.location.search}`
+        `${BASE_URL}/product/${window.location.search}`
       );
       const totalCount = Math.ceil(data.count / LIMIT);
 
@@ -60,7 +60,7 @@ const FoodContext = ({ children }) => {
 
   async function getOneDish(id) {
     try {
-      const { data } = await $axios.get(`${BASE_URL}product/${id}`);
+      const { data } = await $axios.get(`${BASE_URL}/product/${id}`);
       dispach({
         type: ACTIONS.oneDish,
         payload: data.results,
@@ -72,7 +72,7 @@ const FoodContext = ({ children }) => {
 
   async function addDish(newDish) {
     try {
-      const { data } = await $axios.post(`${BASE_URL}product/`, newDish);
+      const { data } = await $axios.post(`${BASE_URL}/product/`, newDish);
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +80,7 @@ const FoodContext = ({ children }) => {
 
   async function deleteDish(id) {
     try {
-      await $axios.delete(`${BASE_URL}product/${id}`);
+      await $axios.delete(`${BASE_URL}/product/${id}`);
       getDishes();
     } catch (error) {
       console.log(error);
@@ -89,7 +89,7 @@ const FoodContext = ({ children }) => {
 
   async function editDish(id, newData) {
     try {
-      await $axios.patch(`${BASE_URL}product/${id}`, newData);
+      await $axios.patch(`${BASE_URL}/product/${id}`, newData);
     } catch (error) {
       console.log(error);
     }
@@ -97,7 +97,7 @@ const FoodContext = ({ children }) => {
 
   async function getCategories() {
     try {
-      const { data } = await $axios.get(`${BASE_URL}category_restourant/`);
+      const { data } = await $axios.get(`${BASE_URL}/category_restourant/`);
       dispach({
         type: ACTIONS.categories,
         payload: data.results,

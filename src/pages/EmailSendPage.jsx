@@ -18,6 +18,8 @@ export default function EmailSendPage() {
   const [email, setEmail] = React.useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    //const data = new FormData(e.currentTarget);
+
     if (email.trim() === "") {
       alert("Please fill out all fields.");
       return;
