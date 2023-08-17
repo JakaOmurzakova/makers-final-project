@@ -208,4 +208,17 @@
   }
 }
 
-/* ?Card */
+/* ?Card Menu*/
+.menuPage_container {
+  height: 100vh;
+}
+@media screen and (max-width: 520px) {
+  .css-1vbuhp2-MuiGrid-root {
+    width: 320px !important;
+  }
+  .menuPage_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
