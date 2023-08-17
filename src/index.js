@@ -19,7 +19,7 @@ import CartContext from "./contexts/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+   <BrowserRouter>
     <AuthContext>
       <ServicesContext>
         <FoodContext>
