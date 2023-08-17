@@ -864,10 +864,8 @@ span {
 
 /* todo Service page */
 .servicepage_container {
-  /* background-color: #2c3333; */
-
   background-color: #192734;
-  /* background-color: #22303c; */
+
   color: whitesmoke;
   width: 100%;
 }
@@ -902,6 +900,21 @@ span {
   font-size: 22px;
 }
 
+@media screen and (max-width: 700px) {
+  .service_img {
+    width: 350px !important;
+    height: 300px !important;
+  }
+  .css-1j1x1o0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .css-iltq8i {
+    height: 300px !important;
+  }
+}
+
 @media screen and (max-width: 820px) {
   .services_hero_text-container {
     width: 50%;
@@ -929,8 +942,16 @@ span {
   .services_hero h2 {
     font-size: 24px;
   }
+  .service_img {
+    width: 320px !important;
+    height: 320px !important;
+  }
 }
-
+@media screen and (max-width: 370px) {
+  .css-1j1x1o0 {
+    gap: 60px;
+  }
+}
 /* ? Authpage */
 
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
@@ -1018,4 +1039,22 @@ span {
   height: 100vh;
   margin-top: 100px;
   color: whitesmoke;
+}
+
+/* ? Order Page */
+.order_info {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .order_info {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+  }
+  .calendar {
+    display: none;
+  }
 }

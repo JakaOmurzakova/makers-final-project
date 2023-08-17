@@ -25,17 +25,13 @@ root.render(
         <FoodContext>
           <HotelContext>
             <CartContext>
-              <OrderContext>
-                <Toastify />
-                <App />
-              </OrderContext>
-            </CartContext>
-            <OrderContext>
               <CommentContext>
-                <Toastify />
-                <App />
+                <OrderContext>
+                  <Toastify />
+                  <App />
+                </OrderContext>
               </CommentContext>
-            </OrderContext>
+            </CartContext>
           </HotelContext>
         </FoodContext>
       </ServicesContext>

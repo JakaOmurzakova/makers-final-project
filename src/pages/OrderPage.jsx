@@ -72,102 +72,102 @@ const OrderPage = () => {
 
   return (
     <div>
-      <div>
-        <h2
+      <div className="calendar">
+        <div>
+          <h2
+            style={{
+              color: "white",
+              marginTop: "100px",
+              textAlign: "center",
+              fontSize: "50px",
+            }}
+          >
+            Massage
+          </h2>
+        </div>
+        <Table
+          bordered
           style={{
-            color: "white",
-            marginTop: "100px",
-            textAlign: "center",
-            fontSize: "50px",
+            marginTop: "70px",
+            backgroundColor: "#0d7e83",
+            marginBottom: "70px",
           }}
         >
-          Massage
-        </h2>
-      </div>
-      <Table
-        bordered
-        style={{
-          marginTop: "70px",
-          backgroundColor: "#0d7e83",
-          marginBottom: "70px",
-        }}
-      >
-        <thead>
-          <tr>
-            <th style={{ backgroundColor: "#ffaf87" }}>Days of Week</th>
-            {daysOfWeek.map((day) => (
-              <th key={day} style={{ backgroundColor: "#ffaf87" }}>
-                {day}
-              </th>
-            ))}
-          </tr>
-          <tr>
-            <th style={{ backgroundColor: "#ffaf87" }}>Working time</th>
-            {date.map((item) => (
-              <th key={item} style={{ backgroundColor: "#ffaf87" }}>
-                {/* {startOfWeek.clone().add(item, "day").format("l")} */}
-                {item}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody style={{ margin: "15px" }}>
-          {timeSlots.map((time, timeIndex) => (
-            <tr key={time}>
-              <td
-                style={{
-                  backgroundColor: "#ffaf87",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                {time}
-              </td>
-              {daysOfWeek.map((_, dayIndex) => {
-                const iteration = timeIndex * daysOfWeek.length + dayIndex;
-                const cellOrders = orders.filter(
-                  (order) => order.time === time && order.day === date[dayIndex]
-                );
-                return (
-                  <td
-                    key={dayIndex}
-                    style={{
-                      border: "1px solid white",
-                      padding: "5px",
-                      cursor: "pointer",
-                      backgroundColor:
-                        selectedIteration === null
-                          ? "transparent"
-                          : selectedIteration === iteration
-                          ? "cyan"
-                          : "transparent",
-                    }}
-                    onClick={(e) => {
-                      const result = window.confirm(
-                        "Do you want to take a time for massage?"
-                      );
-                      if (result) {
-                        const name = prompt("Enter your name...");
-                        handleOrder(time, date[dayIndex], name);
-                      }
-                    }}
-                  >
-                    {cellOrders.map((order) => (
-                      <div key={order.orderId}>{order.user}</div>
-                    ))}
-                  </td>
-                );
-              })}
+          <thead>
+            <tr>
+              <th style={{ backgroundColor: "#ffaf87" }}>Days of Week</th>
+              {daysOfWeek.map((day) => (
+                <th key={day} style={{ backgroundColor: "#ffaf87" }}>
+                  {day}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </Table>
+            <tr>
+              <th style={{ backgroundColor: "#ffaf87" }}>Working time</th>
+              {date.map((item) => (
+                <th key={item} style={{ backgroundColor: "#ffaf87" }}>
+                  {/* {startOfWeek.clone().add(item, "day").format("l")} */}
+                  {item}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody style={{ margin: "15px" }}>
+            {timeSlots.map((time, timeIndex) => (
+              <tr key={time}>
+                <td
+                  style={{
+                    backgroundColor: "#ffaf87",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  {time}
+                </td>
+                {daysOfWeek.map((_, dayIndex) => {
+                  const iteration = timeIndex * daysOfWeek.length + dayIndex;
+                  const cellOrders = orders.filter(
+                    (order) =>
+                      order.time === time && order.day === date[dayIndex]
+                  );
+                  return (
+                    <td
+                      key={dayIndex}
+                      style={{
+                        border: "1px solid white",
+                        padding: "5px",
+                        cursor: "pointer",
+                        backgroundColor:
+                          selectedIteration === null
+                            ? "transparent"
+                            : selectedIteration === iteration
+                            ? "cyan"
+                            : "transparent",
+                      }}
+                      onClick={(e) => {
+                        const result = window.confirm(
+                          "Do you want to take a time for massage?"
+                        );
+                        if (result) {
+                          const name = prompt("Enter your name...");
+                          handleOrder(time, date[dayIndex], name);
+                        }
+                      }}
+                    >
+                      {cellOrders.map((order) => (
+                        <div key={order.orderId}>{order.user}</div>
+                      ))}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
 
       <Link to="/services">
-        <span
-          className="order_info"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
+        <span className="order_info">
           Не работает на мобильных устройствах. Перейдите на Сервисную страницу
         </span>
       </Link>
