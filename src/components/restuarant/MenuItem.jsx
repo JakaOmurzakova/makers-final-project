@@ -16,6 +16,15 @@ const MenuItem = ({ item }) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [like, setLike] = useState(false);
+
+  function changeColor() {
+    if (!like) {
+      setLike(true);
+    } else {
+      setLike(false);
+    }
+  }
+
   return (
     <div className="menu_card">
       <div className="card_position">
@@ -70,10 +79,12 @@ const MenuItem = ({ item }) => {
           </div>
           <div className="card__title">{item.title}</div>
           <div className="card__subtitle">{item.description}</div>
+
           <div className="card__wrapper">
             <div className="card__price">${item.price}</div>
-            <IconButton>
-              {like ? <FavoriteIcon /> : <FavoriteTwoToneIcon />}
+
+            <IconButton onClick={changeColor}>
+              {like ? <FavoriteIcon color="secondary" /> : <FavoriteIcon />}
             </IconButton>
             <div className="card__order">
               <button onClick={() => addToCart(item)} className="card__btn">
