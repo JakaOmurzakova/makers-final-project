@@ -33,6 +33,7 @@ export default function BasicRating() {
     <Box
       sx={{
         "& > legend": { mt: 2 },
+        marginBottom: "150px",
       }}
     >
       <Rating

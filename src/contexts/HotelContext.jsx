@@ -36,7 +36,7 @@ const HotelContext = ({ children }) => {
   async function getRooms() {
     try {
       const { data } = await $axios.get(
-        `${BASE_URL}hotels/${window.location.search}`
+        `${BASE_URL}/hotels/${window.location.search}`
       );
       console.log(data);
       const totalCount = Math.ceil(data.count / LIMIT);
@@ -57,7 +57,7 @@ const HotelContext = ({ children }) => {
 
   async function getOneRoom(id) {
     try {
-      const { data } = await $axios.get(`${BASE_URL}hotels/${id}`);
+      const { data } = await $axios.get(`${BASE_URL}/hotels/${id}`);
       dispach({
         type: HOTEL_ACTION.oneRoom,
         payload: data,
@@ -69,7 +69,7 @@ const HotelContext = ({ children }) => {
 
   async function addRoom(newRoom) {
     try {
-      await $axios.post(`${BASE_URL}hotels/`, newRoom);
+      await $axios.post(`${BASE_URL}/hotels/`, newRoom);
     } catch (e) {
       console.log(e);
     }
@@ -77,7 +77,7 @@ const HotelContext = ({ children }) => {
 
   async function deleteRoom(id) {
     try {
-      await $axios.delete(`${BASE_URL}hotels/${id}`);
+      await $axios.delete(`${BASE_URL}/hotels/${id}`);
       getRooms();
     } catch (e) {
       console.log(e);
@@ -86,14 +86,14 @@ const HotelContext = ({ children }) => {
 
   async function editRoom(id, newData) {
     try {
-      await $axios.patch(`${BASE_URL}hotels/${id}`, newData);
+      await $axios.patch(`${BASE_URL}/hotels/${id}`, newData);
     } catch (e) {
       console.log(e);
     }
   }
 
   async function getDetail(id) {
-    const { data } = await $axios.get(`${BASE_URL}hotels/${id}`);
+    const { data } = await $axios.get(`${BASE_URL}/hotels/${id}`);
     setDetail(data);
   }
 

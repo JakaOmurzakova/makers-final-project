@@ -11,6 +11,10 @@ const Details = ({ item }) => {
   const { oneRoom } = useHotelContext();
   const { id } = useParams();
   const navigate = useNavigate();
+
+  if (!item) {
+    return;
+  }
   return (
     <div className="detailPage_container">
       <div className="detailPage_container_carousel">
@@ -38,19 +42,13 @@ const Details = ({ item }) => {
         </Carousel>
       </div>
       <div className="detailPage_container_info">
-
-       
-          
-
         <div className="detailPage_container_info_left">
           <h2>{item.title}</h2>
           <h3>{item.category}</h3>
           <h4>{item.description}</h4>
+
           <Rating />
         </div>
-       
-          
-        
       </div>
     </div>
   );
