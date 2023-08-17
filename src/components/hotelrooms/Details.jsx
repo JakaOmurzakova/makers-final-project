@@ -4,6 +4,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import { Calendar } from "react-calendar";
+import Rating from "../Rating";
 
 const Details = ({ item }) => {
   // const { user } = useAuthContext();
@@ -44,17 +45,14 @@ const Details = ({ item }) => {
         </Carousel>
       </div>
       <div className="detailPage_container_info">
-        <div className="detailPage_container_info_left">
+        <div
+          className="detailPage_container_info_left"
+          style={{ marginBottom: "100px" }}
+        >
           <h2>TITLE</h2>
           <h3>CATEGORY</h3>
           <h4>DESCRIPTION</h4>
-          <button>BOOK</button>
-        </div>
-        <div className="detailPage_container_info_right">
-          <img
-            src="https://camo.githubusercontent.com/366e44bda8cd8313fa3043f9ad8c50a205696527268fb410e22db006a917afa9/68747470733a2f2f70726f6a656374732e776f6a74656b6d616a2e706c2f72656163742d63616c656e6461722f72656163742d63616c656e6461722e6a7067"
-            alt=""
-          />
+          <Rating />
         </div>
       </div>
     </div>
