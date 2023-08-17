@@ -9,6 +9,7 @@ const Comment = () => {
   const [inputValue, setInputValue] = useState("");
   const { user } = useAuthContext();
 
+  console.log(user);
   useEffect(() => {
     getComments();
   }, []);
@@ -20,7 +21,7 @@ const Comment = () => {
     }
     const newComment = {
       text: inputValue,
-      user: user.username,
+      user: user.email,
       date: new Date().toString(),
     };
 
