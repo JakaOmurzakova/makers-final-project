@@ -23,7 +23,7 @@ const RoomItem = ({ item }) => {
             <div>
               <Button
                 className="detail_btn"
-                onClick={() => navigate(`/room-detail/${id}`)}
+                onClick={() => navigate(`/room-detail/${item.id}`)}
               >
                 Details
               </Button>

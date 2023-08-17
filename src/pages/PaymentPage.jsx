@@ -39,9 +39,7 @@ export default function PaymentPage() {
           id="standard-start-adornment"
           sx={{ m: 1, width: "25ch" }}
           InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">Name</InputAdornment>
-            ),
+            startAdornment: <InputAdornment position="start"></InputAdornment>,
           }}
           variant="standard"
         />
@@ -62,9 +60,7 @@ export default function PaymentPage() {
           </InputLabel>
           <Input
             id="standard-adornment-amount"
-            startAdornment={
-              <InputAdornment position="start">Card Number</InputAdornment>
-            }
+            startAdornment={<InputAdornment position="start"></InputAdornment>}
           />
         </FormControl>{" "}
         <FormControl sx={{ m: 1, width: "25ch" }} variant="standard">
@@ -85,7 +81,7 @@ export default function PaymentPage() {
             }
           />
           <button
-            onClick={() => notify("Оплата обрабатывается", "default")}
+            onClick={() => notify("Payment in progress", "success")}
             style={{
               width: "100px",
               marginTop: "20px",
@@ -95,7 +91,7 @@ export default function PaymentPage() {
               fontWeight: "500",
             }}
           >
-            Оплатить
+            Pay
           </button>
         </FormControl>
       </div>
