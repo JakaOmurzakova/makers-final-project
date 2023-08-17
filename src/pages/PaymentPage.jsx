@@ -1,98 +1,92 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import FilledInput from "@mui/material/FilledInput";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import { Box, Button, Container } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 export default function PaymentPage() {
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <Container maxWidth="sm" sx={{ position: "relative" }}>
-      <React.Fragment>
-        <Typography
-          variant="h6"
-          gutterBottom
-          color="black"
-          sx={{ textAlign: "center", mt: 10 }}
-        >
-          Payment method
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <TextField
-              required
-              id="cardName"
-              label="Enter please name on card"
-              fullWidth
-              sx={{ color: "white" }}
-              autoComplete="cc-name"
-              variant="standard"
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              required
-              id="cardNumber"
-              label="Card number"
-              fullWidth
-              autoComplete="cc-number"
-              variant="standard"
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              required
-              id="expDate"
-              label="Expiry date"
-              fullWidth
-              autoComplete="cc-exp"
-              variant="standard"
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <TextField
-              required
-              id="cvv"
-              label="CVV"
-              helperText="Last three digits on signature strip"
-              fullWidth
-              autoComplete="cc-csc"
-              variant="standard"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={
-                <Checkbox color="secondary" name="saveCard" value="yes" />
-              }
-              label="Remember credit card details for next time"
-              sx={{ color: "black" }}
-            />
-          </Grid>
-        </Grid>
-      </React.Fragment>
-      <Box sx={{ bottom: "50px", right: "5px" }}>
-        <Button
-          variant="outlined"
-          sx={{ borderColor: "rgb(17, 98, 99)", color: "white" }}
-          onClick={() => navigate("/cart")}
-        >
-          Back
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          sx={{ backgroundColor: "rgb(17, 98, 99)" }}
-          onClick={() => navigate("/orderpage")}
-        >
-          Place order
-        </Button>
-      </Box>
-    </Container>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        marginTop: "100px",
+        height: "70vh",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div>
+        <h2 style={{ color: "whitesmoke" }}>Payment</h2>
+        <TextField
+          label="Payment"
+          id="standard-start-adornment"
+          sx={{ m: 1, width: "25ch" }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">Name</InputAdornment>
+            ),
+          }}
+          variant="standard"
+        />
+        <FormControl variant="standard" sx={{ m: 1, mt: 3, width: "25ch" }}>
+          <Input
+            id="standard-adornment-weight"
+            inputProps={{
+              "aria-label": "weight",
+            }}
+          />
+          <FormHelperText id="standard-weight-helper-text">
+            Email
+          </FormHelperText>
+        </FormControl>
+        <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+          <InputLabel htmlFor="standard-adornment-amount">
+            Card Number
+          </InputLabel>
+          <Input
+            id="standard-adornment-amount"
+            startAdornment={
+              <InputAdornment position="start">Card Number</InputAdornment>
+            }
+          />
+        </FormControl>{" "}
+        <FormControl sx={{ m: 1, width: "25ch" }} variant="standard">
+          <InputLabel htmlFor="standard-adornment-password">CVV</InputLabel>
+          <Input
+            id="standard-adornment-password"
+            type={showPassword ? "text" : "password"}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+      </div>
+    </Box>
   );
-}
-{
 }
