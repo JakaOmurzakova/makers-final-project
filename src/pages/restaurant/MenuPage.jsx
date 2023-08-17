@@ -17,7 +17,7 @@ const MenuPage = () => {
     getDishes();
   }, [searchParams]);
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div className="menuPage_container" style={{ marginTop: "100px" }}>
       <Box>
         <MenuLiveSearch />
       </Box>
