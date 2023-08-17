@@ -19,19 +19,19 @@ import CartContext from "./contexts/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-   <BrowserRouter>
+  <BrowserRouter>
     <AuthContext>
       <ServicesContext>
         <FoodContext>
           <HotelContext>
-            <CartContext>
-              <CommentContext>
+            <CommentContext>
+              <CartContext>
                 <OrderContext>
                   <Toastify />
                   <App />
                 </OrderContext>
-              </CommentContext>
-            </CartContext>
+              </CartContext>
+            </CommentContext>
           </HotelContext>
         </FoodContext>
       </ServicesContext>

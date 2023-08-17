@@ -4,6 +4,7 @@ import { useHotelContext } from "../contexts/HotelContext";
 import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
+import MenuItem from "../components/restuarant/MenuItem";
 
 const HomePage = () => {
   const navigate = useNavigate();

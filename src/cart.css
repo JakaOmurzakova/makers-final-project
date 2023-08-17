@@ -193,7 +193,7 @@
   right: 10px;
   bottom: 20px;
 } */
-.btn {
+.order-btn {
   height: 6em;
   width: 9em;
   display: flex;
@@ -211,4 +211,9 @@
   border-radius: 4px;
   background: #ffffff84;
   transition: all 0.5s ease;
+}
+
+.qwerty {
+  background-color: aqua;
+  height: auto;
 }
