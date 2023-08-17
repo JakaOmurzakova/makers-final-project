@@ -2,8 +2,10 @@ import React from "react";
 import "../../menuStyleCard.css";
 import { useFoodContext } from "../../contexts/FoodContext";
 import { useNavigate, useParams } from "react-router-dom";
+import { useCartContext } from "../../contexts/CartContext";
 
 const MenuItem = ({ item }) => {
+  const { addToCart, isAlreadyInCart, deleteFromCart } = useCartContext();
   const { deleteDish } = useFoodContext();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -60,7 +62,9 @@ const MenuItem = ({ item }) => {
           <div className="card__wrapper">
             <div className="card__price">${item.price}</div>
             <div className="card__order">
-              <button className="card__btn">Order</button>
+              <button onClick={() => addToCart(item)} className="card__btn">
+                Order
+              </button>
             </div>
           </div>
         </div>
