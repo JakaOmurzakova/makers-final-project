@@ -66,7 +66,11 @@ export default function AddProductPage() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container
+        sx={{ marginTop: "50px", height: "70vh" }}
+        component="main"
+        maxWidth="xs"
+      >
         <CssBaseline />
         <Box
           sx={{
@@ -116,7 +120,7 @@ export default function AddProductPage() {
               //  value={formValue.image}
               onChange={handleChange}
             />
-            {/*
+
             <FormControl fullWidth>
               <InputLabel>Category</InputLabel>
               <Select
@@ -129,10 +133,9 @@ export default function AddProductPage() {
                 <MenuItem value={"breakfast"}>Breakfast</MenuItem>
                 <MenuItem value={"lanch"}>Lanch</MenuItem>
                 <MenuItem value={"dinner"}>Dinner</MenuItem>
-                <MenuItem value={"fruits"}>Fruits</MenuItem>
               </Select>
-            </FormControl>*/}
-            <FormControl fullWidth>
+            </FormControl>
+            {/* <FormControl fullWidth>
               <InputLabel>Category</InputLabel>
               <Select
                 value={formValue.category}
@@ -146,7 +149,7 @@ export default function AddProductPage() {
                   </MenuItem>
                 ))}
               </Select>
-            </FormControl>
+            </FormControl> */}
 
             <Button
               type="submit"
