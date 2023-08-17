@@ -10,6 +10,8 @@ export const API_MENU = "http://localhost:8000/menu";
 
 export const LIMIT = 12;
 
+export const ADMIN = ["admin@admin.com"];
+
 export const ACTIONS = {
   dishes: "dishes",
   oneDish: "oneDish",

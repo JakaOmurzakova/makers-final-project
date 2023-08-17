@@ -28,7 +28,7 @@ function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
-  const { user, logout } = useAuthContext();
+  const { user, logout, isAdmin } = useAuthContext();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -239,6 +239,17 @@ function Navbar() {
                   <NavLink to="/cart" className="navbar_link">
                     Food Cart
                   </NavLink>
+                  {isAdmin() && (
+                    <NavLink to="/add-room" className="navbar_link">
+                      Add Room
+                    </NavLink>
+                  )}
+                  {isAdmin() && (
+                    <NavLink to="/add-dish" className="navbar_link">
+                      Add Dish
+                    </NavLink>
+                  )}
+
                   {!user ? (
                     <Button
                       component={Link}
