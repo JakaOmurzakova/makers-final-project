@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { IconButton, InputAdornment } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -121,7 +121,6 @@ export default function AuthPage() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
               autoFocus
             />
             <TextField
@@ -132,7 +131,6 @@ export default function AuthPage() {
               label="Password"
               type={showPassword ? "text" : "password"}
               id="password"
-              autoComplete="current-password"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -166,8 +164,8 @@ export default function AuthPage() {
             <Grid container>
               <Grid item xs>
                 {isLogin && (
-                  <Link href="#" variant="body2">
-                    Change password
+                  <Link href="/pass-reset" variant="body2">
+                    Forgot password
                   </Link>
                 )}
               </Grid>

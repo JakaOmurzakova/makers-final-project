@@ -8,6 +8,7 @@ import MenuFilter from "../../components/restuarant/MenuFilter";
 import MenuPagination from "../../components/restuarant/MenuPagination";
 import MenuLiveSearch from "../../components/restuarant/MenuLiveSearch";
 import Comment from "../../components/Comment";
+import "../../menuStyleCard.css";
 
 const MenuPage = () => {
   const { dishes, getDishes } = useFoodContext();
