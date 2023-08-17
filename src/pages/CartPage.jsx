@@ -32,7 +32,7 @@ const CartPage = () => {
             {cart.orders.map((item) => (
               <section className="product" key={item.id}>
                 <div className="product__img">
-                  <img src={item.image1} alt="Apple MacBook Air 13" />
+                  <img width={50} src={item.image_product} alt="" />
                 </div>
                 <div className="product__title">{item.title}</div>
                 <div className="product__price">${item.price}</div>
@@ -85,7 +85,10 @@ const CartPage = () => {
             </footer>
             <section>
               <div className="cart-order">
-                <button className="btn" onClick={() => navigate("/payment")}>
+                <button
+                  className="order-btn"
+                  onClick={() => navigate("/payment")}
+                >
                   <p className="text">Order</p>
                 </button>
               </div>

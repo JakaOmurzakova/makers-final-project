@@ -24,7 +24,6 @@ import EmailSendPage from "../pages/EmailSendPage";
 import CartPage from "../pages/CartPage";
 import PaymentPage from "../pages/PaymentPage";
 
-
 const MainRoute = () => {
   return (
     <Routes>
@@ -45,9 +44,8 @@ const MainRoute = () => {
         <Route path="/room-detail/:id" element={<HotelDetailPage />} />
 
         {/*<Route path="/profile" element={<ProfilePage />} />*/}
-        
-        <Route path="/payment" element={<PaymentPage />} />
 
+        <Route path="/payment" element={<PaymentPage />} />
       </Route>
       <Route
         path="/api/account/reset-password/confirm/"
