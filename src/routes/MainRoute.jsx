@@ -13,10 +13,12 @@ import EditRoomPage from "../pages/hotelRooms/EditRoomPage";
 
 import CottagePage from "../pages/hotelRooms/CottagePage";
 import HotelDetailPage from "../pages/hotelRooms/HotelDetailPage";
-import ProfilePage from "../pages/ProfilePage";
+//import ProfilePage from "../pages/ProfilePage";
 import MenuPage from "../pages/restaurant/MenuPage";
 import AddProductPage from "../pages/restaurant/AddProductPage";
 import EditProductPage from "../pages/restaurant/EditProductPage";
+import ResetPasswordPage from "../pages/ResetPasswordPage";
+import EmailSendPage from "../pages/EmailSendPage";
 
 const MainRoute = () => {
   return (
@@ -35,11 +37,16 @@ const MainRoute = () => {
         <Route path="/add-room" element={<AddRoomPage />} />
         <Route path="/edit-room/:id" element={<EditRoomPage />} />
         <Route path="/room-detail/:id" element={<HotelDetailPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        {/*<Route path="/profile" element={<ProfilePage />} />*/}
       </Route>
+      <Route
+        path="/api/account/reset-password/confirm/"
+        element={<ResetPasswordPage />}
+      />
+      <Route path="/pass-reset" element={<EmailSendPage />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="/api/email-verify/" element={<ActivationPage />} />
+      <Route path="/api/account/email-verify/" element={<ActivationPage />} />
     </Routes>
   );
 };

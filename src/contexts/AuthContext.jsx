@@ -67,6 +67,26 @@ const AuthContext = ({ children }) => {
     }
   }
 
+  async function resetPassword(credentials) {
+    try {
+      await axios.post(`${BASE_URL}reset-password/`, credentials);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function confirmResetPassword(credentials, code) {
+    try {
+      await axios.post(
+        `${BASE_URL}reset-password/confirm/?c=${code}`,
+        credentials
+      );
+      navigate("/auth");
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   const value = {
     user,
     register,
@@ -74,6 +94,8 @@ const AuthContext = ({ children }) => {
     logout,
     checkAuth,
     activateUser,
+    confirmResetPassword,
+    resetPassword,
   };
   return <authContext.Provider value={value}>{children}</authContext.Provider>;
 };
